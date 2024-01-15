@@ -1,5 +1,3 @@
-// ----- FOURTH TEST -----
-
 const commonWords = [ 'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'I', 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at', 'this', 
 'but', 'his', 'by', 'from', 'they', 'we', 'say', 'her', 'she', 'or', 'an', 'will', 'my', 'one', 'all', 'would', 'there', 'their', 'what', 'so', 'up', 'out', 
 'if', 'about', 'who', 'get', 'which', 'go', 'me', 'when', 'make', 'can', 'like', 'time', 'no', 'just', 'him', 'know', 'take', 'people', 'into', 'year', 'your', 
@@ -21,30 +19,38 @@ for(let i = 0; i < NUM_WORDS; i++) {
 }
 
 // Put it on the HTML
-let words4 = document.getElementById('words4');
+let words = document.getElementById('words');
 let htmlTestWords = `<span id="0" class="current">${actualTestWords[0]}</span> `;
 for(let i = 1; i < actualTestWords.length; i++) {
     htmlTestWords += `<span id="${i}">${actualTestWords[i]}</span> `;
 }
-words4.innerHTML = htmlTestWords;
+words.innerHTML = htmlTestWords;
 
 let userWordsArr = [];
 
-// Reset textbox when user presses space
 function newCharacterInput() {
-    let input = textbox4.value;
+    let input = textbox.value;
     
-    if (actualTestWords[currWord].indexOf(input) < 0) {  // User mispelled
+    if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
         document.getElementById(String(currWord)).setAttribute('class', 'wrong');
     }
     else {
         document.getElementById(String(currWord)).setAttribute('class', 'current');
     }
+
+    // EARTHQUAKE EASTER EGG
+    if(input == 'EARTHQUAKE') {
+        let earthquakeCss = document.createElement('link');
+        earthquakeCss.setAttribute('rel', 'stylesheet');
+        earthquakeCss.setAttribute('href', 'earthquake.css');
+        document.head.appendChild(earthquakeCss);
+    }
     
+    // Reset textbox when user presses space
     let lastChar = input.charAt(input.length-1);
     if(lastChar == ' ') {
         userWordsArr.push(input.substring(0, input.length-1));
-        textbox4.value = '';
+        textbox.value = '';
         nextWord();
     }
 }
@@ -57,7 +63,7 @@ function nextWord() {
 }
 
 let doneTyping2 = function() {
-    let resultsDiv = document.getElementById('results4');
+    let resultsDiv = document.getElementById('words-div');
 
     let correctWords = 0;
     let wrongWords = 0;
@@ -92,7 +98,7 @@ let doneTyping2 = function() {
     let WPM = Math.round(correctLetters / 5);
 
     resultsDiv.innerHTML = `
-        <p>Great job. You typed at ${WPM} WPM!<p>
+        <h3>Great job. You typed at <strong>${WPM} WPM!</strong></h3>
         <p><strong>Correct words: </strong> ${correctWords}</p>
         <p><strong>Correct letters: </strong> ${correctLetters}</p>
         <p><strong>Wrong words: </strong> ${wrongWords}</p>
@@ -104,9 +110,9 @@ let doneTyping2 = function() {
     }
 }
 
-let textbox4 = document.getElementById('textbox4');
-textbox4.onclick = function() {
-    textbox4.setAttribute('placeholder', '');
+let textbox = document.getElementById('textbox');
+textbox.onclick = function() {
+    textbox.setAttribute('placeholder', '');
     setTimeout(doneTyping2, 1000 * LENGTH_SECONDS);
 }
 

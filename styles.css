@@ -1,5 +1,11 @@
+
+body {
+    background-image: url(dark-brown-wood.png);
+    
+}
+
 .current {
-    background-color: rgb(227, 226, 232);
+    background-color: rgba(185, 164, 107, 0.8);
 }
 
 .wrong {
@@ -12,11 +18,13 @@ span {
 }
 
 #words-div {
+    background-image: url(light-brown-wood.jpg);
+    background-repeat: round;
     max-width: 1000px;
     text-align: center;
     margin: auto;
     padding: 0 35px;
-    border: 2px solid gray;
+    border: 2px solid rgb(168, 140, 107);
     border-radius: 20px;
 }
 
@@ -25,7 +33,7 @@ span {
     margin: 0 auto 0 auto;
 }
 
-#textbox4 {
+#textbox {
     margin: auto;
 }
 

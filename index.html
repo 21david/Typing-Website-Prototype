@@ -4,130 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Website</title>
-    <script>const LENGTH_SECONDS =   60  ; </script>
+    <script>const LENGTH_SECONDS =   60  ;</script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- FIRST TEST -->
-    <p>This is my typing website. Welcome!</p>
-    <input id="textbox" maxlength="800" size="30" placeholder="Type something here">
-    <button id="button">Analyze</button>
-    <br>
-    <br>
-    <div id="results"></div>
-
-    <hr>
-
-    <!-- SECOND TEST -->
-    <p>Type these words in the textbox:</p>
-    <p id="words">The quick brown fox jumps over the lazy dog, while the energetic puppy eagerly chases its tail nearby, and a curious cat watches intently from a distant windowsill.</p>
-    <input id="textbox2" maxlength="800" size="30" placeholder="Type the words here">
-    <button id="button2">Analyze</button>
-    <br>
-    <br>
-    <div id="results2"></div>
-
-    <hr>
-
-    <!-- THIRD TEST -->
-    <p>Type as many of these words as possible in the textbox. You have 1 minute as soon as you click on the textbox below.</p>
-    <p id="words3" style="font-size: 2em">apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda</p>
-    <input id="textbox3" style="font-size: 2em" maxlength="800" size="30" placeholder="Type the words here">
-    <br>
-    <br>
-    <div id="results3"></div>
-
-    <hr>
-
-    <!-- FOURTH TEST -->
-    <p>Type as many of these words as possible in the textbox. You have 1 minute as soon as you click on the textbox below.</p>
     <div id="words-div">
-        <p id="words4" style="font-size: 2em"></p>
+        <p id="words" style="font-size: 2em"></p>
     </div>
     <div id="input-div">
-        <p><input id="textbox4" style="font-size: 2em" maxlength="800" size="30" placeholder="Type the words here" oninput="newCharacterInput()"></p>
+        <p><input id="textbox" style="font-size: 2em" maxlength="800" size="30" placeholder="Type the words here" oninput="newCharacterInput()"></p>
     </div>
-    <br>
-    <br>
-    <div id="results4"></div>
-
-    <script>
-        // ----- FIRST TEST -----
-        let btn = document.getElementById('button');
-        btn.onclick = function() {
-            let text = document.getElementById('textbox').value;
-            let numWords = text.split(' ').length;
-
-            let results = document.getElementById('results');
-            results.innerHTML = 'You typed ' + numWords + ' words!';
-        }
-
-
-        // ----- SECOND TEST -----
-        let btn2 = document.getElementById('button2');
-        btn2.onclick = function() {
-            let text = document.getElementById('textbox2').value;
-            
-            let results = document.getElementById('results2');
-            let testWords = document.getElementById('words').innerHTML;
-            if(text == testWords)
-                results.innerHTML = 'You typed it in perfectly! Congratulations!'
-            else
-                results.innerHTML = 'Sorry, try again.'
-        }
-        
-        // ----- THIRD TEST -----
-
-        let doneTyping = function() {
-            let userText = document.getElementById('textbox3').value;
-            let resultsDiv = document.getElementById('results3');
-            let actualWords = document.getElementById('words3').innerHTML;
-
-            let actualWordsArr = actualWords.split(' ');
-            let userWordsArr = userText.split(' ');
-
-            let correct = 0;
-            let wrong = 0;
-            let wrongArr = [];
-
-            for (let i = 0; i < userWordsArr.length; i++) {
-                // For each input word, compare it to the corresponding one
-                let curWord = userWordsArr[i];
-                let actualWord = actualWordsArr[i];
-
-                console.log(curWord, 'vs', actualWord);
-
-                if(curWord == actualWord)
-                    correct += 1;
-                else {
-                    // Exception for the last one, in case user was in the middle of typing
-                    if (!userWordsArr[i+1])
-                        break;
-                    wrong += 1;
-                    wrongArr.push(' ' + curWord + ' (<strong>' + actualWord + '</strong>)');
-                }
-            }
-
-            resultsDiv.innerHTML = `
-                <p>Great job. You typed at ${correct} WPM!<p>
-                <p><strong>Correct: </strong> ${correct}</p>
-                <p><strong>Wrong: </strong> ${wrong}</p>
-            `;
-            if(wrongArr.length) {
-                resultsDiv.innerHTML += `
-                <p><strong>Wrong words: </strong> ${wrongArr}</p>
-                `;
-            }
-        }
-
-        let textbox3 = document.getElementById('textbox3');
-        textbox3.onclick = function() {
-            setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
-        }
-
-    </script>
-
-    <!-- FOURTH TEST -->
+    <div id="results-div"></div>
     <script src="script.js"></script>
 </body>
 </html>
