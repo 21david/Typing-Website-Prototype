@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Website</title>
+</head>
+<body>
+    <p>This is my typing website. Welcome!</p>
+    <input id="textbox" maxlength="800" size="30" placeholder="Type something here">
+    <button id="button2">Analyze</button>
+    <br>
+    <br>
+    <div id="results"></div>
+    <script>
+        let btn = document.getElementById('button2');
+        
+        btn.onclick = function() {
+            let text = document.getElementById('textbox').value;
+            let numWords = text.split(' ').length;
+
+            let results = document.getElementById('results');
+            results.innerHTML = 'You typed ' + numWords + ' words!';
+        }
+    </script>
+</body>
+</html>
