@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Website</title>
+    <script>const LENGTH_SECONDS =   60  ; </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- FIRST TEST -->
     <p>This is my typing website. Welcome!</p>
     <input id="textbox" maxlength="800" size="30" placeholder="Type something here">
     <button id="button">Analyze</button>
@@ -15,6 +18,7 @@
 
     <hr>
 
+    <!-- SECOND TEST -->
     <p>Type these words in the textbox:</p>
     <p id="words">The quick brown fox jumps over the lazy dog, while the energetic puppy eagerly chases its tail nearby, and a curious cat watches intently from a distant windowsill.</p>
     <input id="textbox2" maxlength="800" size="30" placeholder="Type the words here">
@@ -25,14 +29,30 @@
 
     <hr>
 
+    <!-- THIRD TEST -->
     <p>Type as many of these words as possible in the textbox. You have 1 minute as soon as you click on the textbox below.</p>
     <p id="words3" style="font-size: 2em">apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda</p>
-    <input id="textbox3" maxlength="800" size="30" placeholder="Type the words here">
+    <input id="textbox3" style="font-size: 2em" maxlength="800" size="30" placeholder="Type the words here">
     <br>
     <br>
     <div id="results3"></div>
 
+    <hr>
+
+    <!-- FOURTH TEST -->
+    <p>Type as many of these words as possible in the textbox. You have 1 minute as soon as you click on the textbox below.</p>
+    <div id="words-div">
+        <p id="words4" style="font-size: 2em"></p>
+    </div>
+    <div id="input-div">
+        <p><input id="textbox4" style="font-size: 2em" maxlength="800" size="30" placeholder="Type the words here" oninput="newCharacterInput()"></p>
+    </div>
+    <br>
+    <br>
+    <div id="results4"></div>
+
     <script>
+        // ----- FIRST TEST -----
         let btn = document.getElementById('button');
         btn.onclick = function() {
             let text = document.getElementById('textbox').value;
@@ -42,6 +62,8 @@
             results.innerHTML = 'You typed ' + numWords + ' words!';
         }
 
+
+        // ----- SECOND TEST -----
         let btn2 = document.getElementById('button2');
         btn2.onclick = function() {
             let text = document.getElementById('textbox2').value;
@@ -54,7 +76,7 @@
                 results.innerHTML = 'Sorry, try again.'
         }
         
-        const LENGTH_SECONDS = 60;
+        // ----- THIRD TEST -----
 
         let doneTyping = function() {
             let userText = document.getElementById('textbox3').value;
@@ -104,5 +126,8 @@
         }
 
     </script>
+
+    <!-- FOURTH TEST -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+.current {
+    background-color: rgb(227, 226, 232);
+}
+
+.wrong {
+    background-color: red;
+}
+
+span {
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+#words-div {
+    max-width: 1000px;
+    text-align: center;
+    margin: auto;
+    padding: 0 35px;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+#input-div {
+    max-width: 450px;
+    margin: 0 auto 0 auto;
+}
+
+#textbox4 {
+    margin: auto;
+}
+
