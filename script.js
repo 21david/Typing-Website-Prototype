@@ -62,7 +62,7 @@ function nextWord() {
     document.getElementById(String(currWord)).setAttribute('class', 'current');
 }
 
-let doneTyping2 = function() {
+let doneTyping = function() {
     let resultsDiv = document.getElementById('words-div');
 
     let correctWords = 0;
@@ -113,6 +113,6 @@ let doneTyping2 = function() {
 let textbox = document.getElementById('textbox');
 textbox.onclick = function() {
     textbox.setAttribute('placeholder', '');
-    setTimeout(doneTyping2, 1000 * LENGTH_SECONDS);
+    setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
 }
 
