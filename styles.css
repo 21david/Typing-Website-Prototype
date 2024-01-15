@@ -19,7 +19,12 @@ span {
     border-radius: 5px;
 }
 
+body {
+    background-color: navy;
+}
+
 #words-div {
+    background-color: white;
     max-width: 1000px;
     text-align: center;
     margin: auto;

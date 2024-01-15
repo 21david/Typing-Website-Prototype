@@ -28,7 +28,16 @@ words.innerHTML = htmlTestWords;
 
 let userWordsArr = [];
 
+let startedTest = false;
 function newCharacterInput() {
+    // Start the test
+    if(!startedTest) {
+        startedTest = true;
+        let textbox = document.getElementById('textbox');
+        textbox.setAttribute('placeholder', '');
+        setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
+    }
+
     let input = textbox.value;
     
     if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
@@ -112,10 +121,3 @@ let doneTyping = function() {
         `;
     }
 }
-
-let textbox = document.getElementById('textbox');
-textbox.onclick = function() {
-    textbox.setAttribute('placeholder', '');
-    setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
-}
-
