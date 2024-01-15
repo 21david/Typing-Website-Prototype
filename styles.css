@@ -1,8 +1,16 @@
+.done-correct {
+    color: green;
+}
+
+.done-wrong {
+    color: red;
+}
+
 .current {
     background-color: rgb(227, 226, 232);
 }
 
-.wrong {
+.current-wrong {
     background-color: red;
 }
 
@@ -28,4 +36,3 @@ span {
 #textbox {
     margin: auto;
 }
-

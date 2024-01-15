@@ -32,7 +32,7 @@ function newCharacterInput() {
     let input = textbox.value;
     
     if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
-        document.getElementById(String(currWord)).setAttribute('class', 'wrong');
+        document.getElementById(String(currWord)).setAttribute('class', 'current-wrong');
     }
     else {
         document.getElementById(String(currWord)).setAttribute('class', 'current');
@@ -49,15 +49,18 @@ function newCharacterInput() {
     // Reset textbox when user presses space
     let lastChar = input.charAt(input.length-1);
     if(lastChar == ' ') {
-        userWordsArr.push(input.substring(0, input.length-1));
+        let userWord = input.substring(0, input.length-1);
+        userWordsArr.push(userWord);
         textbox.value = '';
-        nextWord();
+
+        let correctlyTyped = userWord == actualTestWords[currWord];
+        nextWord(correctlyTyped);
     }
 }
 
 let currWord = 0;
-function nextWord() {
-    document.getElementById(String(currWord)).removeAttribute('class');
+function nextWord(correctlyTyped) {
+    document.getElementById(String(currWord)).setAttribute('class', correctlyTyped? 'done-correct' : 'done-wrong');
     currWord += 1;
     document.getElementById(String(currWord)).setAttribute('class', 'current');
 }
