@@ -13,9 +13,7 @@
     <br>
     <div id="results"></div>
 
-
     <hr>
-
 
     <p>Type these words in the textbox:</p>
     <p id="words">The quick brown fox jumps over the lazy dog, while the energetic puppy eagerly chases its tail nearby, and a curious cat watches intently from a distant windowsill.</p>
@@ -24,6 +22,15 @@
     <br>
     <br>
     <div id="results2"></div>
+
+    <hr>
+
+    <p>Type as many of these words as possible in the textbox. You have 1 minute as soon as you click on the textbox below.</p>
+    <p id="words3" style="font-size: 2em">apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda quail raccoon seashell tiger apple banana cherry dog elephant frog grape houston igloo jigsaw kangaroo lemon monkey nectarine octopus pineapple quokka raspberry strawberry turtle unicorn vampire watermelon xylophone zebra avocado blueberry coconut dragon flamingo giraffe hippo jellyfish koala lavender mango narwhal octagon panda</p>
+    <input id="textbox3" maxlength="800" size="30" placeholder="Type the words here">
+    <br>
+    <br>
+    <div id="results3"></div>
 
     <script>
         let btn = document.getElementById('button');
@@ -40,11 +47,60 @@
             let text = document.getElementById('textbox2').value;
             
             let results = document.getElementById('results2');
-            let answer = document.getElementById('words').innerHTML;
-            if(text == answer)
+            let testWords = document.getElementById('words').innerHTML;
+            if(text == testWords)
                 results.innerHTML = 'You typed it in perfectly! Congratulations!'
             else
                 results.innerHTML = 'Sorry, try again.'
+        }
+        
+        const LENGTH_SECONDS = 60;
+
+        let doneTyping = function() {
+            let userText = document.getElementById('textbox3').value;
+            let resultsDiv = document.getElementById('results3');
+            let actualWords = document.getElementById('words3').innerHTML;
+
+            let actualWordsArr = actualWords.split(' ');
+            let userWordsArr = userText.split(' ');
+
+            let correct = 0;
+            let wrong = 0;
+            let wrongArr = [];
+
+            for (let i = 0; i < userWordsArr.length; i++) {
+                // For each input word, compare it to the corresponding one
+                let curWord = userWordsArr[i];
+                let actualWord = actualWordsArr[i];
+
+                console.log(curWord, 'vs', actualWord);
+
+                if(curWord == actualWord)
+                    correct += 1;
+                else {
+                    // Exception for the last one, in case user was in the middle of typing
+                    if (!userWordsArr[i+1])
+                        break;
+                    wrong += 1;
+                    wrongArr.push(' ' + curWord + ' (<strong>' + actualWord + '</strong>)');
+                }
+            }
+
+            resultsDiv.innerHTML = `
+                <p>Great job. You typed at ${correct} WPM!<p>
+                <p><strong>Correct: </strong> ${correct}</p>
+                <p><strong>Wrong: </strong> ${wrong}</p>
+            `;
+            if(wrongArr.length) {
+                resultsDiv.innerHTML += `
+                <p><strong>Wrong words: </strong> ${wrongArr}</p>
+                `;
+            }
+        }
+
+        let textbox3 = document.getElementById('textbox3');
+        textbox3.onclick = function() {
+            setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
         }
 
     </script>
