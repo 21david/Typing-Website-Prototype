@@ -8,13 +8,25 @@
 <body>
     <p>This is my typing website. Welcome!</p>
     <input id="textbox" maxlength="800" size="30" placeholder="Type something here">
-    <button id="button2">Analyze</button>
+    <button id="button">Analyze</button>
     <br>
     <br>
     <div id="results"></div>
+
+
+    <hr>
+
+
+    <p>Type these words in the textbox:</p>
+    <p id="words">The quick brown fox jumps over the lazy dog, while the energetic puppy eagerly chases its tail nearby, and a curious cat watches intently from a distant windowsill.</p>
+    <input id="textbox2" maxlength="800" size="30" placeholder="Type the words here">
+    <button id="button2">Analyze</button>
+    <br>
+    <br>
+    <div id="results2"></div>
+
     <script>
-        let btn = document.getElementById('button2');
-        
+        let btn = document.getElementById('button');
         btn.onclick = function() {
             let text = document.getElementById('textbox').value;
             let numWords = text.split(' ').length;
@@ -22,6 +34,19 @@
             let results = document.getElementById('results');
             results.innerHTML = 'You typed ' + numWords + ' words!';
         }
+
+        let btn2 = document.getElementById('button2');
+        btn2.onclick = function() {
+            let text = document.getElementById('textbox2').value;
+            
+            let results = document.getElementById('results2');
+            let answer = document.getElementById('words').innerHTML;
+            if(text == answer)
+                results.innerHTML = 'You typed it in perfectly! Congratulations!'
+            else
+                results.innerHTML = 'Sorry, try again.'
+        }
+
     </script>
 </body>
 </html>
