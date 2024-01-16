@@ -26,13 +26,18 @@ for(let i = 1; i < actualTestWords.length; i++) {
 }
 words.innerHTML = htmlTestWords;
 
+let currWord = 0;
+let correctWords = 0;
+let correctLetters = 0;
+let wrongWords = 0;
+let wrongArr = [];
 let userWordsArr = [];
 
-let startedTest = false;
+let testInProgress = false;
 function newCharacterInput() {
     // Start the test
-    if(!startedTest) {
-        startedTest = true;
+    if(!testInProgress) {
+        testInProgress = true;
         let textbox = document.getElementById('textbox');
         textbox.setAttribute('placeholder', '');
         setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
@@ -40,12 +45,15 @@ function newCharacterInput() {
 
     let input = textbox.value;
     
-    if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
-        document.getElementById(String(currWord)).setAttribute('class', 'current-wrong');
+    try {
+        if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
+            document.getElementById(String(currWord)).setAttribute('class', 'current-wrong');
+        }
+        else {
+            document.getElementById(String(currWord)).setAttribute('class', 'current');
+        }
     }
-    else {
-        document.getElementById(String(currWord)).setAttribute('class', 'current');
-    }
+    catch (TypeError) {}
 
     // EARTHQUAKE EASTER EGG
     if(input == 'EARTHQUAKE') {
@@ -58,55 +66,38 @@ function newCharacterInput() {
     // Reset textbox when user presses space
     let lastChar = input.charAt(input.length-1);
     if(lastChar == ' ') {
-        let userWord = input.substring(0, input.length-1);
-        userWordsArr.push(userWord);
+        processWord(input);
         textbox.value = '';
-
-        let correctlyTyped = userWord == actualTestWords[currWord];
-        nextWord(correctlyTyped);
+        document.getElementById(String(currWord)).setAttribute('class', 'current');
     }
 }
 
-let currWord = 0;
-function nextWord(correctlyTyped) {
-    document.getElementById(String(currWord)).setAttribute('class', correctlyTyped? 'done-correct' : 'done-wrong');
+function processWord(userWord) {
+    userWord = userWord.substring(0, userWord.length-1);
+    userWordsArr.push(userWord);
+    textbox.value = '';
+
+    // CORRECT
+    if(userWord == actualTestWords[currWord]) {
+        document.getElementById(String(currWord)).setAttribute('class', 'done-correct');
+        correctWords += 1;
+        correctLetters += userWord.length;
+    }
+
+    // WRONG
+    else {
+        document.getElementById(String(currWord)).setAttribute('class', 'done-wrong');
+        wrongWords += 1;
+        wrongArr.push(' ' + userWord + ' (<strong>' + actualTestWords[currWord] + '</strong>)');
+        console.log(userWord);
+    }
+
     currWord += 1;
-    document.getElementById(String(currWord)).setAttribute('class', 'current');
 }
 
 let doneTyping = function() {
+    testInProgress = false;
     let resultsDiv = document.getElementById('words-div');
-
-    let correctWords = 0;
-    let wrongWords = 0;
-    let wrongArr = [];
-
-    let correctLetters = 0;
-    // let totalLetters = 0;
-
-    for (let i = 0; i < userWordsArr.length; i++) {
-        // For each input word, compare it to the corresponding one
-        let curWord = userWordsArr[i];
-        let actualWord = actualTestWords[i];
-
-        console.log(curWord, 'vs', actualWord);
-
-        // totalLetters += curWord.length;
-
-        if(curWord == actualWord) {
-            correctWords += 1;
-            correctLetters += curWord.length;
-        }
-        else {
-            // Exception for the last one, in case user was in the middle of typing
-            if (!userWordsArr[i+1])
-                break;
-
-            wrongWords += 1;
-            wrongArr.push(' ' + curWord + ' (<strong>' + actualWord + '</strong>)');
-        }
-    }
-
     let WPM = Math.round(correctLetters / 5);
 
     resultsDiv.innerHTML = `
