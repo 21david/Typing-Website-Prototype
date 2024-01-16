@@ -10,37 +10,59 @@ const commonWords = [ 'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have',
 'eleven', 'twelve', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'hundred', 'thousand', 'million', 'billion', 'trillion', 
 'first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
 
-// Set up random words
-let actualTestWords = [];
 const NUM_WORDS = 160;
-for(let i = 0; i < NUM_WORDS; i++) {
-    let randIdx = Math.floor(Math.random() * commonWords.length);
-    actualTestWords.push(commonWords[randIdx]);
-}
-
-// Put it on the HTML
-let words = document.getElementById('words');
-let htmlTestWords = `<span id="0" class="current">${actualTestWords[0]}</span> `;
-for(let i = 1; i < actualTestWords.length; i++) {
-    htmlTestWords += `<span id="${i}">${actualTestWords[i]}</span> `;
-}
-words.innerHTML = htmlTestWords;
-
+let actualTestWords = [];
+let userWordsArr = [];
 let currWord = 0;
 let correctWords = 0;
 let correctLetters = 0;
 let wrongWords = 0;
 let wrongArr = [];
-let userWordsArr = [];
-
 let testInProgress = false;
+let showingResults = false;
+let currTestNum = 0;  // added for timer to reset on a new test
+
+let textbox = document.getElementById('textbox');
+let resultsDiv = document.getElementById('words');
+let timerObj = document.getElementById('timer');
+
+function setUp() {
+    actualTestWords = [];
+    userWordsArr = [];
+    wrongArr = [];
+    currWord = correctWords = correctLetters = wrongWords = 0;
+    testInProgress = showingResults = false;
+    textbox.value = '';
+    currTestNum += 1;
+    
+    // Set up timer
+    timerObj.innerHTML = LENGTH_SECONDS;
+    
+    // Set up random words
+    for(let i = 0; i < NUM_WORDS; i++) {
+        let randIdx = Math.floor(Math.random() * commonWords.length);
+        actualTestWords.push(commonWords[randIdx]);
+    }
+
+    // Put it on the HTML
+    let words = document.getElementById('words');
+    let htmlTestWords = `<span id="0" class="current">${actualTestWords[0]}</span> `;
+    for(let i = 1; i < actualTestWords.length; i++) {
+        htmlTestWords += `<span id="${i}">${actualTestWords[i]}</span> `;
+    }
+    words.innerHTML = htmlTestWords;
+
+    textbox.setAttribute('oninput', 'newCharacterInput()');
+}
+
+// When the user types in any character into the textbox
 function newCharacterInput() {
     // Start the test
-    if(!testInProgress) {
+    if(!testInProgress && !showingResults) {
         testInProgress = true;
-        let textbox = document.getElementById('textbox');
         textbox.setAttribute('placeholder', '');
-        setTimeout(doneTyping, 1000 * LENGTH_SECONDS);
+        startCountdown(currTestNum);
+        timer(LENGTH_SECONDS, currTestNum);
     }
 
     let input = textbox.value;
@@ -72,19 +94,24 @@ function newCharacterInput() {
     }
 }
 
+// Start the actual timer for the test
+function startCountdown(testNum) {
+    setTimeout(() => { doneTyping(testNum) }, 1000 * LENGTH_SECONDS);
+}
+
+// When the user finishes a word
 function processWord(userWord) {
     userWord = userWord.substring(0, userWord.length-1);
     userWordsArr.push(userWord);
     textbox.value = '';
 
-    // CORRECT
+    // Correct
     if(userWord == actualTestWords[currWord]) {
         document.getElementById(String(currWord)).setAttribute('class', 'done-correct');
         correctWords += 1;
         correctLetters += userWord.length;
     }
-
-    // WRONG
+    // Wrong
     else {
         document.getElementById(String(currWord)).setAttribute('class', 'done-wrong');
         wrongWords += 1;
@@ -95,11 +122,18 @@ function processWord(userWord) {
     currWord += 1;
 }
 
-let doneTyping = function() {
+// When the user finishes the test
+function doneTyping(testNum) {
+    // if the user restarted at some point, cancel this invokation
+    if(testNum !== currTestNum)
+        return;
+
+    textbox.removeAttribute('oninput');
+
     testInProgress = false;
-    let resultsDiv = document.getElementById('words-div');
     let WPM = Math.round(correctLetters / 5);
 
+    showingResults = true;
     resultsDiv.innerHTML = `
         <h3>Great job. You typed at <strong>${WPM} WPM!</strong></h3>
         <p><strong>Correct words: </strong> ${correctWords}</p>
@@ -111,4 +145,18 @@ let doneTyping = function() {
         <p><strong>Wrong words: </strong> ${wrongArr}</p>
         `;
     }
+}
+
+// This function updated the timer that is displayed
+// It may be prone to bugs with reset button, should analyze all edge cases
+// including resetting at the last second
+function timer(timeLeft, testNum) {
+    if(timeLeft === -1 || testNum !== currTestNum)
+        return;
+
+    timerObj.innerHTML = timeLeft;
+    if(testInProgress)
+        setTimeout(() => {
+            timer(timeLeft - 1, testNum);
+        }, 1000);
 }

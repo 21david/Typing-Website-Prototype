@@ -34,10 +34,22 @@ body {
 }
 
 #input-div {
-    max-width: 450px;
+    max-width: 580px;
     margin: 0 auto 0 auto;
 }
 
 #textbox {
     margin: auto;
+    max-width: 350px;
+}
+
+#restart {
+    font-size: 2em;
+}
+
+#timer {
+    padding: 10px;
+    background-color: white;
+    max-width: 200px;
+    font-size: 2em;
 }
