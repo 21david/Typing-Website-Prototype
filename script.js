@@ -23,6 +23,8 @@ let showingResults = false;
 let currTestNum = 0;  // added for timer to reset on a new test
 
 let textbox = document.getElementById('textbox');
+let wordsDiv = document.getElementById('words-div');
+let wordsP = document.getElementById('words');
 let resultsDiv = document.getElementById('words');
 let timerObj = document.getElementById('timer');
 
@@ -53,6 +55,27 @@ function setUp() {
     words.innerHTML = htmlTestWords;
 
     textbox.setAttribute('oninput', 'newCharacterInput()');
+
+    resultsDiv.setAttribute('style', 'font-size: 2em;');
+    wordsDiv.setAttribute('style', 'padding: 0px 35px;');
+    wordsDiv.setAttribute('style', 'max-height: 245px;');
+    document.getElementById('words-div').scrollTo(0, 0);
+
+    // Make 2 rows of words visible
+    wordsP.children[0].setAttribute('style', 'visibility: visible;');
+    let i = 0;
+    let currSpan = wordsP.children[i];
+    let currOffset = currSpan.offsetTop;
+    currSpan = wordsP.children[++i];
+    while(currSpan.offsetTop === currOffset) {
+        currSpan.setAttribute('style', 'visibility: visible;');
+        currSpan = wordsP.children[++i];
+    }
+    currOffset = currSpan.offsetTop;
+    while(currSpan.offsetTop === currOffset) {
+        currSpan.setAttribute('style', 'visibility: visible;');
+        currSpan = wordsP.children[++i];
+    }
 }
 
 // When the user types in any character into the textbox
@@ -83,6 +106,8 @@ function newCharacterInput() {
         earthquakeCss.setAttribute('rel', 'stylesheet');
         earthquakeCss.setAttribute('href', 'earthquake.css');
         document.head.appendChild(earthquakeCss);
+
+        // to do, add !EARTHQUAKE to undo it?
     }
     
     // Reset textbox when user presses space
@@ -118,13 +143,57 @@ function processWord(userWord) {
         wrongArr.push(' ' + userWord + ' (<strong>' + actualTestWords[currWord] + '</strong>)');
         console.log(userWord);
     }
+    
+    // Move the line when a row is finished
+    let currWordElement = document.getElementById(String(currWord));
+    console.log(currWordElement.offsetTop);
+    let nextWordElement = document.getElementById(String(currWord+1));
+    if (nextWordElement.offsetTop !== currWordElement.offsetTop) {  // new row
+        moveLine();
+    // wordsDiv.scrollTo(0, currWordElement.offsetTop);
+
+    } 
 
     currWord += 1;
 }
 
+// Executed when the user finishes a row
+// Bug: Resizing the window messes up the rows
+function moveLine() {
+    // Make current row invisible
+    let currWordCopy = currWord;
+    
+    let currSpan = wordsP.children[currWordCopy];
+    // console.log(currSpan);
+    wordsDiv.scrollTo(0, currSpan.offsetTop);
+    currSpan.setAttribute('style', 'visibility: hidden;');
+    let currOffset = currSpan.offsetTop;
+    // console.log(currOffset);
+    // console.log(wordsP.children);
+    // console.log(currWordCopy);
+
+    while(currWordCopy > 0 && wordsP.children[--currWordCopy].offsetTop === currOffset) {
+        // console.log(wordsP.children[currWordCopy]);
+        wordsP.children[currWordCopy].setAttribute('style', 'visibility: hidden;');
+    }
+
+    // Make the row after the next one visible
+    currWordCopy = currWord+1;
+    currOffset = wordsP.children[currWordCopy].offsetTop;
+    while(wordsP.children[currWordCopy++].offsetTop === currOffset);
+    currWordCopy--;
+
+    currOffset = wordsP.children[currWordCopy].offsetTop;
+    while(wordsP.children[currWordCopy].offsetTop === currOffset) {
+        // console.log(wordsP.children[currWordCopy]);
+        wordsP.children[currWordCopy++].setAttribute('style', 'visibility: visible;');
+    }
+
+}
+
 // When the user finishes the test
 function doneTyping(testNum) {
-    // if the user restarted at some point, cancel this invokation
+    // if the user restarted at some point, cancel this function call
     if(testNum !== currTestNum)
         return;
 
@@ -134,12 +203,18 @@ function doneTyping(testNum) {
     let WPM = Math.round(correctLetters / 5);
 
     showingResults = true;
+    resultsDiv.setAttribute('style', 'font-size: 1em;');
+    console.log('should add padding');
+    wordsDiv.setAttribute('style', 'max-height: 500px; padding: 0px 35px 35px 35px;');
+
+    let message = WPM? 'Great job.' : 'You suck!';
     resultsDiv.innerHTML = `
-        <h3>Great job. You typed at <strong>${WPM} WPM!</strong></h3>
+        <h3>${message} You typed at <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> WPM!</h3>
         <p><strong>Correct words: </strong> ${correctWords}</p>
         <p><strong>Correct letters: </strong> ${correctLetters}</p>
         <p><strong>Wrong words: </strong> ${wrongWords}</p>
     `;
+
     if(wrongArr.length) {
         resultsDiv.innerHTML += `
         <p><strong>Wrong words: </strong> ${wrongArr}</p>
