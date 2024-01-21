@@ -80,15 +80,30 @@ function setUp() {
 
 // When the user types in any character into the textbox
 function newCharacterInput() {
-    // Start the test
+    let input = textbox.value;
+
+    // EARTHQUAKE EASTER EGG
+    if(input == 'EARTHQUAKE') {
+        let earthquakeCss = document.getElementById('earthquake') || document.createElement('link');
+        earthquakeCss.setAttribute('id', 'earthquake');
+        earthquakeCss.setAttribute('rel', 'stylesheet');
+        earthquakeCss.setAttribute('href', 'earthquake.css');
+        document.head.appendChild(earthquakeCss);
+    }
+    else if(input == '!EARTHQUAKE') {
+        let earthquakeCss = document.getElementById('earthquake');
+        if(earthquakeCss) earthquakeCss.parentNode.removeChild(earthquakeCss);
+    }
+
+    if(showingResults) return;
+
+    // Start the test if user input the first letter
     if(!testInProgress && !showingResults) {
         testInProgress = true;
         textbox.setAttribute('placeholder', '');
         startCountdown(currTestNum);
         timer(LENGTH_SECONDS, currTestNum);
     }
-
-    let input = textbox.value;
     
     try {
         if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
@@ -99,20 +114,9 @@ function newCharacterInput() {
         }
     }
     catch (TypeError) {}
-
-    // EARTHQUAKE EASTER EGG
-    if(input == 'EARTHQUAKE') {
-        let earthquakeCss = document.createElement('link');
-        earthquakeCss.setAttribute('rel', 'stylesheet');
-        earthquakeCss.setAttribute('href', 'earthquake.css');
-        document.head.appendChild(earthquakeCss);
-
-        // to do, add !EARTHQUAKE to undo it?
-    }
     
     // Reset textbox when user presses space
-    let lastChar = input.charAt(input.length-1);
-    if(lastChar == ' ') {
+    if(input.endsWith(' ')) {
         processWord(input);
         textbox.value = '';
         document.getElementById(String(currWord)).setAttribute('class', 'current');
@@ -146,12 +150,9 @@ function processWord(userWord) {
     
     // Move the line when a row is finished
     let currWordElement = document.getElementById(String(currWord));
-    console.log(currWordElement.offsetTop);
     let nextWordElement = document.getElementById(String(currWord+1));
     if (nextWordElement.offsetTop !== currWordElement.offsetTop) {  // new row
         moveLine();
-    // wordsDiv.scrollTo(0, currWordElement.offsetTop);
-
     } 
 
     currWord += 1;
@@ -164,16 +165,11 @@ function moveLine() {
     let currWordCopy = currWord;
     
     let currSpan = wordsP.children[currWordCopy];
-    // console.log(currSpan);
     wordsDiv.scrollTo(0, currSpan.offsetTop);
     currSpan.setAttribute('style', 'visibility: hidden;');
     let currOffset = currSpan.offsetTop;
-    // console.log(currOffset);
-    // console.log(wordsP.children);
-    // console.log(currWordCopy);
 
     while(currWordCopy > 0 && wordsP.children[--currWordCopy].offsetTop === currOffset) {
-        // console.log(wordsP.children[currWordCopy]);
         wordsP.children[currWordCopy].setAttribute('style', 'visibility: hidden;');
     }
 
@@ -185,7 +181,6 @@ function moveLine() {
 
     currOffset = wordsP.children[currWordCopy].offsetTop;
     while(wordsP.children[currWordCopy].offsetTop === currOffset) {
-        // console.log(wordsP.children[currWordCopy]);
         wordsP.children[currWordCopy++].setAttribute('style', 'visibility: visible;');
     }
 
@@ -197,14 +192,13 @@ function doneTyping(testNum) {
     if(testNum !== currTestNum)
         return;
 
-    textbox.removeAttribute('oninput');
+    // textbox.removeAttribute('oninput');
 
     testInProgress = false;
     let WPM = Math.round(correctLetters / 5);
 
     showingResults = true;
     resultsDiv.setAttribute('style', 'font-size: 1em;');
-    console.log('should add padding');
     wordsDiv.setAttribute('style', 'max-height: 500px; padding: 0px 35px 35px 35px;');
 
     let message = WPM? 'Great job.' : 'You suck!';
