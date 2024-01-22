@@ -6,13 +6,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Website</title>
-    <script>
-        let m = 60;
-        const LENGTH_SECONDS =   m  ;
-    </script>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Options bar -->
+    <nav>
+        <ul>
+            <li>
+                <select name="Difficulty" id="difficulty" onchange="changeDifficulty(this.value)"> 
+                    <option value="easy">Easy</option> 
+                    <option value="medium">Medium</option> 
+                    <option value="hard">Hard</option> 
+                    <option value="expert">Expert</option> 
+                </select>
+            </li>
+            <li>
+                <select name="Duration" id="duration"  onchange="changeDuration(this.value)"> 
+                    <option value="15">15 seconds</option> 
+                    <option value="30">30 seconds</option> 
+                    <option value="60" selected>1 minute</option> 
+                    <option value="120">2 minutes</option> 
+                    <option value="300">5 minutes</option> 
+                    <option value="600">10 minutes</option> 
+                </select>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Test area -->
     <div id="words-div">
         <p id="words" style="font-size: 2em"></p>
     </div>
@@ -23,17 +45,16 @@
         <button id="restart" onclick="setUp()">Restart</button>
     </div>
     
+    <!-- JavaScript -->
+    <script>
+        let m = 60;
+        let LENGTH_SECONDS =   m  ;
+    </script>
+    <script src="easyWords.js"></script>
+    <script src="mediumWords.js"></script>
+    <script src="hardWords.js"></script>
+    <script src="expertWords.js"></script>
     <script src="script.js"></script>
     <script>setUp()</script>
-
-    <script>
-        // let words = document.getElementsByTagName('span');
-        // for(let i = 0; i < words.length; i++) {
-        //     console.log(words[i].innerHTML);
-        //     let word = words[i];
-        //     console.log(word.offsetTop);
-        //     console.log(word.offsetLeft);
-        // }
-    </script>
 </body>
 </html>

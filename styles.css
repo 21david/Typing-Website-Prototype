@@ -1,3 +1,29 @@
+/* 
+Bug: after user finishes first line of words,
+the next line goes lower, and it looks uncentered vertically.
+*/
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    color: cyan;
+    font-size: 2em;
+    background-color: rgb(8, 0, 50);
+    padding: 10px 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+nav ul li:hover {
+    background-color: darkslategray;
+}
+
 .done-correct {
     color: green;
 }
@@ -34,6 +60,8 @@ body {
     border-radius: 20px;
     max-height: 245px;
     overflow: hidden;
+    position: relative;
+
 }
 
 #words-div span {

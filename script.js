@@ -1,16 +1,5 @@
-const commonWords = [ 'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'I', 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do', 'at', 'this', 
-'but', 'his', 'by', 'from', 'they', 'we', 'say', 'her', 'she', 'or', 'an', 'will', 'my', 'one', 'all', 'would', 'there', 'their', 'what', 'so', 'up', 'out', 
-'if', 'about', 'who', 'get', 'which', 'go', 'me', 'when', 'make', 'can', 'like', 'time', 'no', 'just', 'him', 'know', 'take', 'people', 'into', 'year', 'your', 
-'good', 'some', 'could', 'them', 'see', 'other', 'than', 'then', 'now', 'look', 'only', 'come', 'its', 'over', 'think', 'also', 'back', 'after', 'use', 'two', 
-'how', 'our', 'work', 'first', 'well', 'way', 'even', 'new', 'want', 'because', 'any', 'these', 'give', 'day', 'most', 'us', 'is', 'am', 'are', 'was', 'were', 
-'being', 'been', 'have', 'had', 'has', 'do', 'does', 'did', 'done', 'get', 'got', 'getting', 'gets', 'go', 'goes', 'going', 'gone', 'make', 'makes', 'making', 
-'made', 'look', 'looks', 'looking', 'looked', 'take', 'takes', 'taking', 'took', 'come', 'comes', 'coming', 'came', 'think', 'thinks', 'thinking', 'thought', 
-'want', 'wants', 'wanting', 'wanted', 'use', 'uses', 'using', 'used', 'work', 'works', 'working', 'worked', 'first', 'seconds', 'minute', 'minutes', 'hour', 
-'hours', 'day', 'days', 'week', 'weeks', 'month', 'months', 'year', 'years', 'a', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 
-'eleven', 'twelve', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'hundred', 'thousand', 'million', 'billion', 'trillion', 
-'first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
-
-const NUM_WORDS = 160;
+const NUM_WORDS = 1500;
+let currentWords = easy;
 let actualTestWords = [];
 let userWordsArr = [];
 let currWord = 0;
@@ -42,8 +31,8 @@ function setUp() {
     
     // Set up random words
     for(let i = 0; i < NUM_WORDS; i++) {
-        let randIdx = Math.floor(Math.random() * commonWords.length);
-        actualTestWords.push(commonWords[randIdx]);
+        let randIdx = Math.floor(Math.random() * currentWords.length);
+        actualTestWords.push(currentWords[randIdx]);
     }
 
     // Put it on the HTML
@@ -174,6 +163,8 @@ function moveLine() {
     }
 
     // Make the row after the next one visible
+    // Bug: if it nears the end, it gives 
+    //      TypeError: Cannot read properties of undefined (reading 'offsetTop')
     currWordCopy = currWord+1;
     currOffset = wordsP.children[currWordCopy].offsetTop;
     while(wordsP.children[currWordCopy++].offsetTop === currOffset);
@@ -192,10 +183,8 @@ function doneTyping(testNum) {
     if(testNum !== currTestNum)
         return;
 
-    // textbox.removeAttribute('oninput');
-
     testInProgress = false;
-    let WPM = Math.round(correctLetters / 5);
+    let WPM = Math.round((correctLetters / 5) / (LENGTH_SECONDS / 60));
 
     showingResults = true;
     resultsDiv.setAttribute('style', 'font-size: 1em;');
@@ -228,4 +217,31 @@ function timer(timeLeft, testNum) {
         setTimeout(() => {
             timer(timeLeft - 1, testNum);
         }, 1000);
+}
+
+function changeDifficulty(option) {
+    switch (option) {
+        case 'easy':
+            currentWords = easy;
+            break;
+
+        case 'medium':
+            currentWords = easy.concat(medium);
+            break;
+
+        case 'hard':
+            currentWords = medium.concat(hard);
+            break;
+
+        case 'expert':
+            currentWords = hard.concat(expert);
+            break;
+    }
+
+    setUp();
+}
+
+function changeDuration(option) {
+    LENGTH_SECONDS = Number(option);
+    setUp();
 }
