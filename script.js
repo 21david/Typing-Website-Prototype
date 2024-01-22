@@ -127,7 +127,7 @@ function processWord(userWord) {
     if(userWord == actualTestWords[currWord]) {
         document.getElementById(String(currWord)).setAttribute('class', 'done-correct');
         correctWords += 1;
-        correctLetters += userWord.length;
+        correctLetters += userWord.length + 1;
     }
     // Wrong
     else {
