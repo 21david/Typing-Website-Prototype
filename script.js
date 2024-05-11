@@ -66,6 +66,8 @@ function setUp() {
         currSpan.setAttribute('style', 'visibility: visible;');
         currSpan = wordsP.children[++i];
     }
+
+    textbox.focus();
 }
 
 // When the user types in any character into the textbox
