@@ -1,5 +1,6 @@
 const NUM_WORDS = 1500;
 let currentWords = easy;
+let language = 'english'
 let actualTestWords = [];
 let userWordsArr = [];
 let currWord = 0;
@@ -190,22 +191,44 @@ function doneTyping(testNum) {
     resultsDiv.setAttribute('style', 'font-size: 1em;');
     wordsDiv.setAttribute('style', 'max-height: 500px; padding: 0px 35px 35px 35px;');
 
-    let message = WPM? 'Great job.' : 'You suck!';
-    resultsDiv.innerHTML = `
-        <h3>${message} You typed at <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> WPM!</h3>
-        <p><strong>Correct words: </strong> ${correctWords}</p>
-        <p><strong>Correct letters: </strong> ${correctLetters}</p>
-        <p><strong>Wrong words: </strong> ${wrongWords}</p>
-    `;
-
-    if(wrongArr.length) {
-        resultsDiv.innerHTML += `
-        <p><strong>Wrong words: </strong> ${wrongArr}</p>
-        `;
+    let message;
+    
+    switch (language) {
+        case 'english':
+            message = WPM? 'Great job.' : 'You suck!';
+            resultsDiv.innerHTML = `
+            <h3>${message} You typed at <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> WPM!</h3>
+            <p><strong>Correct words: </strong> ${correctWords}</p>
+            <p><strong>Correct letters: </strong> ${correctLetters}</p>
+            <p><strong>Wrong words: </strong> ${wrongWords}</p>
+            `;
+            if(wrongArr.length) {
+                resultsDiv.innerHTML += `
+                    <p><strong>Wrong words: </strong> ${wrongArr}</p>
+                `;
+            }
+            break;
+            
+        case 'spanish':
+            message = WPM? '¡Buen trabajo!' : 'Lastima.';
+            resultsDiv.innerHTML = `
+                <h3>${message} Escribiste a <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> palabras por minuto. </h3>
+                <p><strong>Palabras correctas: </strong> ${correctWords}</p>
+                <p><strong>Letras correctas: </strong> ${correctLetters}</p>
+                <p><strong>Palabras incorrectas: </strong> ${wrongWords}</p>
+            `;
+            if(wrongArr.length) {
+                resultsDiv.innerHTML += `
+                    <p><strong>Palabras incorrectas: </strong> ${wrongArr}</p>
+                `;
+            }
+            break;
     }
+
+    
 }
 
-// This function updated the timer that is displayed
+// This function updates the timer that is displayed
 // It may be prone to bugs with reset button, should analyze all edge cases
 // including resetting at the last second
 function timer(timeLeft, testNum) {
@@ -247,11 +270,39 @@ function changeDuration(option) {
 }
 
 function changeLanguage(option) {
+    let newDurationOptions;
+    let currentDurationOptions;
+    let i;
     switch (option) {
-        case 'en':
+        case 'english':
+            language = 'english';
+            currentWords = easy;
+            document.getElementById('restart').innerText = 'Restart';
+            document.getElementById('textbox').setAttribute('placeholder', 'Type the words here');
+            document.getElementById('difficultyLi').style.display = "";
+
+            // Set duration dropdown options
+            newDurationOptions = ['15 seconds', '30 seconds', '1 minute', '2 minutes', '5 minutes', '10 minutes'];
+            currentDurationOptions = document.getElementById('duration').options;
+            i = 0;
+            for (let option of currentDurationOptions) {
+                option.text = newDurationOptions[i++];
+            }
             break;
-        case 'es':
+        case 'spanish':
+            language = 'spanish';
             currentWords = easySpanish;
+            document.getElementById('restart').innerText = 'Reiniciar';
+            document.getElementById('textbox').setAttribute('placeholder', 'Escribe las palabras aqui');
+            document.getElementById('difficultyLi').style.display = "none";
+
+            // Set duration options
+            newDurationOptions = ['15 segundos', '30 segundos', '1 minuto','2 minutos', '5 minutos', '10 minutos'];
+            currentDurationOptions = document.getElementById('duration').options;
+            i = 0;
+            for (let option of currentDurationOptions) {
+                option.text = newDurationOptions[i++];
+            }
             break;
     }
     setUp();

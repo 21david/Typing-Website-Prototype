@@ -69,13 +69,13 @@ body {
 }
 
 #input-div {
-    max-width: 580px;
+    max-width: 610px;
     margin: 0 auto 0 auto;
 }
 
 #textbox {
     margin: auto;
-    max-width: 350px;
+    max-width: 370px;
 }
 
 #restart {

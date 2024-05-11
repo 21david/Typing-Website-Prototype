@@ -13,7 +13,7 @@
     <!-- Options bar -->
     <nav>
         <ul>
-            <li>
+            <li id="difficultyLi">
                 <select name="Difficulty" id="difficulty" onchange="changeDifficulty(this.value)"> 
                     <option value="easy">Easy</option> 
                     <option value="medium">Medium</option> 
@@ -22,7 +22,7 @@
                 </select>
             </li>
             <li>
-                <select name="Duration" id="duration"  onchange="changeDuration(this.value)"> 
+                <select name="Duration" id="duration" onchange="changeDuration(this.value)"> 
                     <option value="15">15 seconds</option> 
                     <option value="30">30 seconds</option> 
                     <option value="60" selected>1 minute</option> 
@@ -33,8 +33,8 @@
             </li>
             <li>
                 <select name="Language" id="language"  onchange="changeLanguage(this.value)"> 
-                    <option value="en" selected>English</option> 
-                    <option value="es">Spanish (Español)</option> 
+                    <option value="english" selected>English</option> 
+                    <option value="spanish">Spanish (Español)</option> 
                 </select>
             </li>
         </ul>

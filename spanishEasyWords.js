@@ -8,6 +8,5 @@ const easySpanish = [
     "noticias", "clima", "seguridad", "vacaciones", "playa", "río", "campo", "ciudad",
     "mascotas", "plantas", "jardín", "electrodomésticos", "reparaciones", "servicios",
     "eventos", "celebraciones", "religión", "Colombia", "Montería", "Sinú", "Medellín",
-    "México", "Bogotá", "Cali", "Cartagena", "Barranquilla", "Córdoba", "Peru", "Lima",
-    "Magdalena", "Neiva", "Tatacoa", "Guajira", "Envigado"
+    "Cali", "Cartagena", "Córdoba", "Neiva", "Tatacoa"
 ];
