@@ -3,7 +3,7 @@ const easy = [
     "as", "with", "his", "they", "at", "be", "this", "have", "from", "or", "one", "had", "by", 
     "word", "but", "not", "what", "all", "were", "we", "when", "your", "can", "said", "there", "use", 
     "an", "each", "which", "she", "do", "how", "their", "if", "will", "up", "other", "about", "out", 
-    "many", "then", "them", "these", "so", "some", "her", "would", "make", "like", "him", "into", 
+    "many", "then", "these", "so", "some", "her", "would", "make", "like", "him", "into", 
     "time", "has", "look", "two", "more", "write", "go", "see", "number", "no", "way", "could", "people", 
     "my", "than", "first", "water", "been", "call", "who", "oil", "its", "now", "find", "long", "down", 
     "day", "did", "get", "come", "made", "may", "part", "over", "new", "sound", "take", "only", "little", 
@@ -16,3 +16,5 @@ const easy = [
     "picture", "again", "change", "off", "play", "spell", "air", "away", "animal", "house", "point", 
     "page", "letter", "mother", "answer", "found", "study", "still", "learn", "should", "world"
 ];
+
+// remove very similar words to make it easier? like 'no' and 'now'
