@@ -31,6 +31,12 @@
                     <option value="600">10 minutes</option> 
                 </select>
             </li>
+            <li>
+                <select name="Language" id="language"  onchange="changeLanguage(this.value)"> 
+                    <option value="en" selected>English</option> 
+                    <option value="es">Spanish (Español)</option> 
+                </select>
+            </li>
         </ul>
     </nav>
 
@@ -54,6 +60,7 @@
     <script src="mediumWords.js"></script>
     <script src="hardWords.js"></script>
     <script src="expertWords.js"></script>
+    <script src="spanishEasyWords.js"></script>
     <script src="script.js"></script>
     <script>setUp()</script>
 </body>

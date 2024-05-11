@@ -245,3 +245,14 @@ function changeDuration(option) {
     LENGTH_SECONDS = Number(option);
     setUp();
 }
+
+function changeLanguage(option) {
+    switch (option) {
+        case 'en':
+            break;
+        case 'es':
+            currentWords = easySpanish;
+            break;
+    }
+    setUp();
+}
