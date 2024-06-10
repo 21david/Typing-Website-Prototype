@@ -37,6 +37,22 @@
                     <option value="spanish">Spanish (Español)</option> 
                 </select>
             </li>
+        
+            <!-- Spanish options -->
+            <div id="spanishOptions" hidden>
+                <ul>
+
+                    <li>
+                        <label>¿Tildes?</label>
+                        <input type="checkbox" id="accents" checked><br>
+                    </li>
+                    <li>
+                        <label>¿Ñ?</label>
+                        <input type="checkbox" id="tildeN" checked><br>
+                    </li>
+                </ul>
+            </div>
+
         </ul>
     </nav>
 
@@ -50,6 +66,17 @@
         <span id="timer"></span>
         <button id="restart" onclick="setUp()">Restart</button>
     </div>
+
+    <!-- Accent and tildeN buttons for Spanish -->
+    <div id="accentButtons" hidden>
+        <button onclick="textbox.value += 'á';">á</button>
+        <button onclick="textbox.value += 'é';">é</button>
+        <button onclick="textbox.value += 'í';">í</button>
+        <button onclick="textbox.value += 'ó';">ó</button>
+        <button onclick="textbox.value += 'ú';">ú</button>
+        <button onclick="textbox.value += 'ü';">ü</button>
+    </div>
+    <button id="tildeNButton" hidden onclick="textbox.value += 'ñ';">ñ</button>
     
     <!-- JavaScript -->
     <script>

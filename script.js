@@ -18,6 +18,12 @@ let wordsP = document.getElementById('words');
 let resultsDiv = document.getElementById('words');
 let timerObj = document.getElementById('timer');
 
+let accentsSetting = document.getElementById('accents');
+let tildeNSetting = document.getElementById('tildeN');
+
+accentsSetting.addEventListener('change', setAccents);
+tildeNSetting.addEventListener('change', setTildeN);
+
 function setUp() {
     actualTestWords = [];
     userWordsArr = [];
@@ -290,6 +296,13 @@ function changeLanguage(option) {
             for (let option of currentDurationOptions) {
                 option.text = newDurationOptions[i++];
             }
+
+            // Hide spanish options
+            document.getElementById('spanishOptions').setAttribute('hidden', '');
+            document.getElementById('accentButtons').setAttribute('hidden', '');
+            document.getElementById('tildeNButton').setAttribute('hidden', '');
+
+
             break;
         case 'spanish':
             language = 'spanish';
@@ -305,7 +318,53 @@ function changeLanguage(option) {
             for (let option of currentDurationOptions) {
                 option.text = newDurationOptions[i++];
             }
+
+            // Set options for accents and ñ
+            document.getElementById('spanishOptions').removeAttribute('hidden');
+            document.getElementById('accentButtons').removeAttribute('hidden');
+            document.getElementById('tildeNButton').removeAttribute('hidden');
+
+
             break;
+    }
+    setUp();
+}
+
+function setAccents(event) {
+    console.log('SET ACCENTS FUNCTION', );
+    if(accentsSetting.checked) {
+        // add accent words to the current array
+        console.log('accents on', );
+        currentWords = easySpanish.concat(easySpanishAccents);
+        document.getElementById('accentButtons').removeAttribute('hidden');
+    } else {
+        // use regular array
+        console.log('accents off', );
+        currentWords = easySpanish;
+        document.getElementById('accentButtons').setAttribute('hidden', '');
+    }
+
+    if(tildeNSetting.checked) {
+        currentWords = currentWords.concat(easySpanishTildeN);
+    }
+    setUp();
+}
+
+function setTildeN(event) {
+    if(tildeNSetting.checked) {
+        // add ñ words to the current array
+        currentWords = easySpanish.concat(easySpanishTildeN);
+        console.log('', currentWords);
+        document.getElementById('tildeNButton').removeAttribute('hidden');
+
+    } else {
+        // use regular array
+        currentWords = easySpanish;
+        document.getElementById('tildeNButton').setAttribute('hidden', '');
+    }
+
+    if(accentsSetting.checked) {
+        currentWords = currentWords.concat(easySpanishAccents);
     }
     setUp();
 }
