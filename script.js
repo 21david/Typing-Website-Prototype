@@ -1,5 +1,6 @@
 const NUM_WORDS = 1500;
 let currentWords = easy;
+let currentWordsTranslated = easySpanishTranslations;
 let language = 'english'
 let actualTestWords = [];
 let userWordsArr = [];
@@ -18,8 +19,10 @@ let wordsP = document.getElementById('words');
 let resultsDiv = document.getElementById('words');
 let timerObj = document.getElementById('timer');
 
+// Sets up words and displays them
 function setUp() {
     actualTestWords = [];
+    actualTestWordsTranslated = [];
     userWordsArr = [];
     wrongArr = [];
     currWord = correctWords = correctLetters = wrongWords = 0;
@@ -34,6 +37,7 @@ function setUp() {
     for(let i = 0; i < NUM_WORDS; i++) {
         let randIdx = Math.floor(Math.random() * currentWords.length);
         actualTestWords.push(currentWords[randIdx]);
+        actualTestWordsTranslated.push(currentWordsTranslated[randIdx]);
     }
 
     // Put it on the HTML
@@ -50,6 +54,16 @@ function setUp() {
     wordsDiv.setAttribute('style', 'padding: 0px 35px;');
     wordsDiv.setAttribute('style', 'max-height: 245px;');
     document.getElementById('words-div').scrollTo(0, 0);
+
+    // Add tooltip on top of word (only for the first word)
+    currWordElement = document.getElementsByClassName('current')[0];
+    console.log('', currWordElement);
+    console.log('', currWordElement.offsetLeft);
+    let tooltip = document.createElement('span');
+    tooltip.setAttribute('class', 'tooltip');
+    tooltip.setAttribute('id', 'tooltip');
+    tooltip.innerHTML = actualTestWordsTranslated[currWord];
+    currWordElement.append(tooltip);
 
     // Make 2 rows of words visible
     wordsP.children[0].setAttribute('style', 'visibility: visible;');
@@ -120,7 +134,7 @@ function startCountdown(testNum) {
     setTimeout(() => { doneTyping(testNum) }, 1000 * LENGTH_SECONDS);
 }
 
-// When the user finishes a word
+// Executes when the user finishes a word
 function processWord(userWord) {
     userWord = userWord.substring(0, userWord.length-1);
     userWordsArr.push(userWord);
@@ -148,19 +162,36 @@ function processWord(userWord) {
     } 
 
     currWord += 1;
+
+    // remove current tooltip
+    console.log('removing prev tooltip', currWordElement);
+    let prevTooltip = document.getElementById('tooltip');
+    console.log('prev tt', prevTooltip);
+    currWordElement.removeChild(prevTooltip);
+
+    // Add tooltip on top of word
+    currWordElement = nextWordElement;
+    console.log('', currWordElement);
+    console.log('', currWordElement.offsetLeft);
+    let tooltip = document.createElement('span');
+    tooltip.setAttribute('class', 'tooltip');
+    tooltip.setAttribute('id', 'tooltip');
+    tooltip.innerHTML = actualTestWordsTranslated[currWord];
+    currWordElement.append(tooltip);
 }
 
-// Executed when the user finishes a row
+let linesMoved = 0;
+
+// Executes when the user finishes a row
 // Bug: Resizing the window messes up the rows
 function moveLine() {
+    console.log('moveLine()', );
     // Make current row invisible
-    let currWordCopy = currWord;
-    
-    let currSpan = wordsP.children[currWordCopy];
+    let currWordCopy = currWord;  // get the new word's index
+    let currSpan = wordsP.children[currWordCopy];  // get new word's span element
     wordsDiv.scrollTo(0, currSpan.offsetTop);
     currSpan.setAttribute('style', 'visibility: hidden;');
     let currOffset = currSpan.offsetTop;
-
     while(currWordCopy > 0 && wordsP.children[--currWordCopy].offsetTop === currOffset) {
         wordsP.children[currWordCopy].setAttribute('style', 'visibility: hidden;');
     }
@@ -172,12 +203,12 @@ function moveLine() {
     currOffset = wordsP.children[currWordCopy].offsetTop;
     while(wordsP.children[currWordCopy++].offsetTop === currOffset);
     currWordCopy--;
-
     currOffset = wordsP.children[currWordCopy].offsetTop;
     while(wordsP.children[currWordCopy].offsetTop === currOffset) {
         wordsP.children[currWordCopy++].setAttribute('style', 'visibility: visible;');
     }
 
+    linesMoved += 1;
 }
 
 // When the user finishes the test
@@ -226,8 +257,6 @@ function doneTyping(testNum) {
             }
             break;
     }
-
-    
 }
 
 // This function updates the timer that is displayed

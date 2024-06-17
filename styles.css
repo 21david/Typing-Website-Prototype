@@ -66,6 +66,8 @@ body {
 
 #words-div span {
     visibility: hidden;
+    display: inline-block;
+    position: relative;
 }
 
 #input-div {
@@ -90,3 +92,36 @@ body {
     font-size: 2em;
     text-align: center;
 }
+
+:root {
+    --tooltip-color: black;
+}
+
+#words-div .tooltip {
+    color: white;
+    background: var(--tooltip-color);
+    font-size: .75em;
+    visibility: visible;
+    position: absolute;
+    border: 1px solid gray;
+
+    /* max-height: 70px; */
+    white-space: nowrap;
+    overflow: hidden;
+
+    top: -54px;
+    left: 0px;
+
+    z-index: 2;
+}
+
+/* Triangle for botton side of tooltip */
+/* #words-div .tooltip::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-color: var(--tooltip-color) transparent transparent transparent;
+    border-width: 8px;
+    border-style: solid;
+    left: 50%;
+} */
