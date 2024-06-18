@@ -1,6 +1,8 @@
 const NUM_WORDS = 1500;
 let currentWords = easy;
 let currentWordsTranslated = easySpanishTranslations;
+let translation = true;
+let translationLanguage = 'spanish';
 let language = 'english'
 let actualTestWords = [];
 let userWordsArr = [];
@@ -29,10 +31,10 @@ function setUp() {
     testInProgress = showingResults = false;
     textbox.value = '';
     currTestNum += 1;
-    
+
     // Set up timer
     timerObj.innerHTML = LENGTH_SECONDS;
-    
+
     // Set up random words
     for(let i = 0; i < NUM_WORDS; i++) {
         let randIdx = Math.floor(Math.random() * currentWords.length);
@@ -56,14 +58,14 @@ function setUp() {
     document.getElementById('words-div').scrollTo(0, 0);
 
     // Add tooltip on top of word (only for the first word)
-    currWordElement = document.getElementsByClassName('current')[0];
-    console.log('', currWordElement);
-    console.log('', currWordElement.offsetLeft);
-    let tooltip = document.createElement('span');
-    tooltip.setAttribute('class', 'tooltip');
-    tooltip.setAttribute('id', 'tooltip');
-    tooltip.innerHTML = actualTestWordsTranslated[currWord];
-    currWordElement.append(tooltip);
+    if (translation) {
+        currWordElement = document.getElementsByClassName('current')[0];
+        let tooltip = document.createElement('span');
+        tooltip.setAttribute('class', 'tooltip');
+        tooltip.setAttribute('id', 'tooltip');
+        tooltip.innerHTML = actualTestWordsTranslated[currWord];
+        currWordElement.append(tooltip);
+    }
 
     // Make 2 rows of words visible
     wordsP.children[0].setAttribute('style', 'visibility: visible;');
@@ -110,7 +112,7 @@ function newCharacterInput() {
         startCountdown(currTestNum);
         timer(LENGTH_SECONDS, currTestNum);
     }
-    
+
     try {
         if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
             document.getElementById(String(currWord)).setAttribute('class', 'current-wrong');
@@ -120,7 +122,7 @@ function newCharacterInput() {
         }
     }
     catch (TypeError) {}
-    
+
     // Reset textbox when user presses space
     if(input.endsWith(' ')) {
         processWord(input);
@@ -153,31 +155,33 @@ function processWord(userWord) {
         wrongArr.push(' ' + userWord + ' (<strong>' + actualTestWords[currWord] + '</strong>)');
         console.log(userWord);
     }
-    
+
     // Move the line when a row is finished
     let currWordElement = document.getElementById(String(currWord));
     let nextWordElement = document.getElementById(String(currWord+1));
     if (nextWordElement.offsetTop !== currWordElement.offsetTop) {  // new row
         moveLine();
-    } 
+    }
 
     currWord += 1;
 
-    // remove current tooltip
-    console.log('removing prev tooltip', currWordElement);
-    let prevTooltip = document.getElementById('tooltip');
-    console.log('prev tt', prevTooltip);
-    currWordElement.removeChild(prevTooltip);
+    if (translation) {
+        // remove current tooltip
+        console.log('removing prev tooltip', currWordElement);
+        let prevTooltip = document.getElementById('tooltip');
+        console.log('prev tt', prevTooltip);
+        currWordElement.removeChild(prevTooltip);
 
-    // Add tooltip on top of word
-    currWordElement = nextWordElement;
-    console.log('', currWordElement);
-    console.log('', currWordElement.offsetLeft);
-    let tooltip = document.createElement('span');
-    tooltip.setAttribute('class', 'tooltip');
-    tooltip.setAttribute('id', 'tooltip');
-    tooltip.innerHTML = actualTestWordsTranslated[currWord];
-    currWordElement.append(tooltip);
+        // Add tooltip on top of word
+        currWordElement = nextWordElement;
+        console.log('', currWordElement);
+        console.log('', currWordElement.offsetLeft);
+        let tooltip = document.createElement('span');
+        tooltip.setAttribute('class', 'tooltip');
+        tooltip.setAttribute('id', 'tooltip');
+        tooltip.innerHTML = actualTestWordsTranslated[currWord];
+        currWordElement.append(tooltip);
+    }
 }
 
 let linesMoved = 0;
@@ -225,7 +229,7 @@ function doneTyping(testNum) {
     wordsDiv.setAttribute('style', 'max-height: 500px; padding: 0px 35px 35px 35px;');
 
     let message;
-    
+
     switch (language) {
         case 'english':
             message = WPM? 'Great job.' : 'You suck!';
@@ -241,7 +245,7 @@ function doneTyping(testNum) {
                 `;
             }
             break;
-            
+
         case 'spanish':
             message = WPM? '¡Buen trabajo!' : 'Lastima.';
             resultsDiv.innerHTML = `
@@ -311,6 +315,7 @@ function changeLanguage(option) {
             document.getElementById('restart').innerText = 'Restart';
             document.getElementById('textbox').setAttribute('placeholder', 'Type the words here');
             document.getElementById('difficultyLi').style.display = "";
+            document.getElementById('translation-label').innerText = 'Translate?'
 
             // Set duration dropdown options
             newDurationOptions = ['15 seconds', '30 seconds', '1 minute', '2 minutes', '5 minutes', '10 minutes'];
@@ -326,6 +331,7 @@ function changeLanguage(option) {
             document.getElementById('restart').innerText = 'Reiniciar';
             document.getElementById('textbox').setAttribute('placeholder', 'Escribe las palabras aqui');
             document.getElementById('difficultyLi').style.display = "none";
+            document.getElementById('translation-label').innerText = '¿Traducir?'
 
             // Set duration options
             newDurationOptions = ['15 segundos', '30 segundos', '1 minuto','2 minutos', '5 minutos', '10 minutos'];
@@ -336,5 +342,24 @@ function changeLanguage(option) {
             }
             break;
     }
+    setUp();
+}
+
+function toggleTranslation() {
+    translation = !translation;
+
+    if (!translation) {
+        document.getElementById('translation-language-li').style.visibility = 'hidden';
+    }
+    else {
+        document.getElementById('translation-language-li').style.visibility = 'visible';
+    }
+
+    setUp();
+}
+
+function changeTranslationLanguage(language) {
+    translationLanguage = language;
+
     setUp();
 }

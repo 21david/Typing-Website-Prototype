@@ -37,6 +37,17 @@
                     <option value="spanish">Spanish (Español)</option> 
                 </select>
             </li>
+            <li>
+                <label id="translation-label">Translate?</label>
+                <input type="checkbox" id="translation" checked onchange="toggleTranslation()"><br>
+            </li>
+            <li id="translation-language-li">
+                <select name="Language" id="translation-language"  onchange="changeTranslationLanguage(this.value)"> 
+                    <option value="spanish" selected>Spanish (Español)</option>
+                    <!-- <option value="french">French (Français)</option> -->
+                    <!-- <option value="portuguese">Portuguese (Português)</option> -->
+                </select>
+            </li>
         </ul>
     </nav>
 
