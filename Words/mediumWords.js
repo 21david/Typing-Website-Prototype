@@ -1,16 +1,79 @@
-const medium = ["abstract", "analyze", "artifact", "balcony", "canvas", "delta", "echo", "fabric", "gallery",
-    "ideal", "jungle", "kernel", "lunar", "matrix", "novel",  "pact",
-    "tactic", "ultra", "valid", "warp", "yearn", "amber", "brisk", "citrus",
-    "dwell", "elite", "fossil", "glimpse", "havoc", "ignite", "jolt", "knack", "linger", "mingle",
-    "nook", "orbit", "pledge", "query", "riddle", "salute", "tangle", "uncut", "vapor", 
-    "aloft", "bland", "cliff", "drone", "grit", "keen", "loft", "mint", "nest",  "plume", "tint",
-    "April", "Boston", "Chrome",  "Friday", "Houston", "India",
-    "June", "London", "Monday", "October", "Paris", "Rome", "Thursday",
-    "Tokyo", "Beaumont", "iPhone", "Android", "Amazon", "Berlin",
-    "Dublin", "Egypt", "Florida", "Lamar", "Hawaii", "Macbook", "Japan", "Lisbon",
-    "Mexico", "Webster", "Apple", "Google", "Russia", "Spain", "Texas", "Venice",
-    "Wales", "Yemen", "Alaska", "Brazil", "Canada", 
-   "Taiwan", "Wellington",
-    "NASA", "FBI", "CIA", "USA", "UNICEF", "EU", "HTML", "UFO", "ASAP"
+const medium = [
+    {
+        word: 'abstract',
+        translations: {
+            spanish: 'abstracto',
+            french: 'abstrait',
+            portuguese: 'abstrato',
+            german: 'abstrakt',
+            japanese: '抽象的な, ちゅうしょうてきな',
+            italian: 'astratto'
+        }
+    },
+    {
+        word: 'analyze',
+        translations: {
+            spanish: 'analizar',
+            french: 'analyser',
+            portuguese: 'analisar',
+            german: 'analysieren',
+            japanese: '分析する, ぶんせきする',
+            italian: 'analizzare'
+        }
+    },
+    {
+        word: 'Artifact',
+        translations: {
+            spanish: 'artefacto',
+            french: 'artefact',
+            portuguese: 'artefato',
+            german: 'Artefakt',
+            japanese: '人工物, じんこうぶつ',
+            italian: 'manufatto'
+        }
+    },
+    {
+        word: 'Balcony',
+        translations: {
+            spanish: 'balcón',
+            french: 'balcon',
+            portuguese: 'sacada',
+            german: 'Balkon',
+            japanese: 'バルコニー',
+            italian: 'balcone'
+        }
+    },
+    {
+        word: 'canvas',
+        translations: {
+            spanish: 'lienzo',
+            french: 'toile',
+            portuguese: 'tela',
+            german: 'Leinwand',
+            japanese: 'キャンバス',
+            italian: 'tela'
+        }
+    },
+    {
+        word: 'Delta',
+        translations: {
+            spanish: 'delta',
+            french: 'delta',
+            portuguese: 'delta',
+            german: 'Delta',
+            japanese: 'デルタ',
+            italian: 'delta'
+        }
+    },
+    {
+        word: 'echo',
+        translations: {
+            spanish: 'eco',
+            french: 'écho',
+            portuguese: 'eco',
+            german: 'Echo',
+            japanese: 'エコー',
+            italian: 'eco'
+        }
+    }
 ];
-

@@ -1,6 +1,5 @@
 const NUM_WORDS = 1500;
 let currentWordSet = easy;
-let currentWordsTranslated = easySpanishTranslations;
 let translation = true;
 let translationLanguage = 'spanish';
 let language = 'english'
@@ -36,10 +35,13 @@ function setUp() {
     timerObj.innerHTML = LENGTH_SECONDS;
 
     // Set up random words
+    if (translation)
+        translationLanguage = document.getElementById('translation-language').value; // get current translation language
     for (let i = 0; i < NUM_WORDS; i++) {
         let randIdx = Math.floor(Math.random() * currentWordSet.length);
-        actualTestWords.push(currentWordSet[randIdx]);
-        actualTestWordsTranslated.push(currentWordsTranslated[randIdx]);
+        actualTestWords.push(currentWordSet[randIdx].word);
+        if (translation)
+            actualTestWordsTranslated.push(currentWordSet[randIdx].translations[translationLanguage]);
     }
 
     // Put it on the HTML
@@ -298,10 +300,33 @@ function changeDuration(option) {
     setUp();
 }
 
+let prevLanguage = 'english';
+
+let languages = {
+    english: {
+        position: 1,
+        nativeLanguageName: 'English'
+    },
+    spanish: {
+        position: 2,
+        nativeLanguageName: 'Español'
+    },
+    french: {
+        position: 3,
+        nativeLanguageName: 'Français'
+    },
+    portuguese: {
+        position: 4,
+        nativeLanguageName: 'Português'
+    },
+};
+
 function changeLanguage(option) {
     let newDurationOptions;
     let currentDurationOptions;
     let i;
+    let prevLanguageOption, translationLanguageSelectEle;
+
     switch (option) {
         case 'english':
             language = 'english';
@@ -318,7 +343,25 @@ function changeLanguage(option) {
             for (let option of currentDurationOptions) {
                 option.text = newDurationOptions[i++];
             }
+
+            // Add the previous language to the dropdown
+            translationLanguageSelectEle = document.getElementById('translation-language');
+            prevLanguageOption = document.createElement('option');
+            prevLanguageOption.setAttribute('value', prevLanguage);
+            prevLanguageOption.text = prevLanguage[0].toUpperCase() + prevLanguage.substring(1);
+            // if (prevLanguage != language)
+                prevLanguageOption.text += ` (${languages[prevLanguage].nativeLanguageName})`;
+            translationLanguageSelectEle.add(prevLanguageOption, languages[prevLanguage].position - 1);
+            prevLanguage = 'english';
+
+            // Remove english from translation dropdown
+            var englishOption = translationLanguageSelectEle.querySelector('option[value="english"]');
+            if (englishOption) {
+                translationLanguageSelectEle.removeChild(englishOption);
+            }
+
             break;
+
         case 'spanish':
             language = 'spanish';
             currentWordSet = easySpanish;
@@ -334,6 +377,23 @@ function changeLanguage(option) {
             for (let option of currentDurationOptions) {
                 option.text = newDurationOptions[i++];
             }
+
+            // Add the previous language to the dropdown
+            translationLanguageSelectEle = document.getElementById('translation-language');
+            prevLanguageOption = document.createElement('option');
+            prevLanguageOption.setAttribute('value', prevLanguage);
+            prevLanguageOption.text = prevLanguage[0].toUpperCase() + prevLanguage.substring(1);
+            // if (prevLanguage != language)
+                prevLanguageOption.text += ` (${languages[prevLanguage].nativeLanguageName})`;
+            translationLanguageSelectEle.add(prevLanguageOption, languages[prevLanguage].position - 1);
+            prevLanguage = 'spanish';
+
+            // Remove spanish from translation dropdown
+            var spanishOption = translationLanguageSelectEle.querySelector('option[value="spanish"]');
+            if (spanishOption) {
+                translationLanguageSelectEle.removeChild(spanishOption);
+            }
+
             break;
     }
     setUp();

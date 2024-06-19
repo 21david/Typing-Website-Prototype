@@ -1,12 +1,100 @@
 const easySpanish = [
-    "familia", "amor", "casa", "comida", "trabajo", "escuela", "mercado", "salud",
-    "cocinar", "limpieza", "vestido", "reunión", "cumpleaños", "amigos", "descanso",
-    "cuidado", "ayuda", "felicidad", "conversación", "tradición", "educación", "cariño",
-    "responsabilidad", "medicina", "fiestas", "vecinos", "ropa", "zapatos", "colegio",
-    "juegos", "deberes", "supermercado", "transporte", "recetas", "dinero", "ahorro",
-    "prestamo", "facturas", "música", "películas", "series", "teléfono", "mensajes",
-    "noticias", "clima", "seguridad", "vacaciones", "playa", "río", "campo", "ciudad",
-    "mascotas", "plantas", "jardín", "electrodomésticos", "reparaciones", "servicios",
-    "eventos", "celebraciones", "religión", "Colombia", "Montería", "Sinú", "Medellín",
-    "Cali", "Cartagena", "Córdoba", "Neiva", "Tatacoa"
+    {
+        word: 'casa',
+        translations: {
+            english: 'house',
+            french: 'maison'
+        }
+    },
+    {
+        word: 'perro',
+        translations: {
+            english: 'dog',
+            french: 'chien'
+        }
+    },
+    {
+        word: 'gato',
+        translations: {
+            english: 'cat',
+            french: 'chat'
+        }
+    },
+    {
+        word: 'comida',
+        translations: {
+            english: 'food',
+            french: 'nourriture'
+        }
+    },
+    {
+        word: 'agua',
+        translations: {
+            english: 'water',
+            french: 'eau'
+        }
+    },
+    {
+        word: 'escuela',
+        translations: {
+            english: 'school',
+            french: 'école'
+        }
+    },
+    {
+        word: 'libro',
+        translations: {
+            english: 'book',
+            french: 'livre'
+        }
+    },
+    {
+        word: 'amigo',
+        translations: {
+            english: 'friend',
+            french: 'ami'
+        }
+    },
+    {
+        word: 'familia',
+        translations: {
+            english: 'family',
+            french: 'famille'
+        }
+    },
+    {
+        word: 'coche',
+        translations: {
+            english: 'car',
+            french: 'voiture'
+        }
+    },
+    {
+        word: 'ciudad',
+        translations: {
+            english: 'city',
+            french: 'ville'
+        }
+    },
+    {
+        word: 'trabajo',
+        translations: {
+            english: 'job',
+            french: 'travail'
+        }
+    },
+    {
+        word: 'dinero',
+        translations: {
+            english: 'money',
+            french: 'argent'
+        }
+    },
+    {
+        word: 'amor',
+        translations: {
+            english: 'love',
+            french: 'amour'
+        }
+    }
 ];

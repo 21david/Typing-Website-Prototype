@@ -1,39 +1,14 @@
 const expert = [
-    "Pseudopseudohypoparathyroidism@!",
-    "Floccinaucinihilipilification#$%",
-    "Antidisestablishmentarianism^&*",
-    "Hippopotomonstrosesquippedaliophobia()-",
-    "Supercalifragilisticexpialidocious_+=",
-    "Gastroenterocolitis[]{}`~",
-    "Thyroparathyroidectomized\\|;",
-    "Electroencephalographically:<'\">.,",
-    "/?Subdermatoglyphic",
-    "AckNoWledge@bility!",
-    "BiotechnoLoGical#$%",
-    "ConfiguraTIon^&*",
-    "DecOmpressioN()-",
-    "ElectroMagneTic_+=",
-    "FibroNecTin[]{}`~",
-    "GastroInteStinal\\|;",
-    "HistoPatholoGic:<'\">.,",
-    "/?InterConnecTed",
-    "JuxtaPosiTIonal!@#",
-    "KinesthEtic$%^",
-    "LymphoCyTic&*(",
-    "MicroScopIc)-_",
-    "NeuroPsyChological=+[]",
-    "OrthoPedically{}|\\",
-    "PharmacoKinetic;:\"'<",
-    "QuadriLaterAl>,./?",
-    "RadioBiOlogy@!#$",
-    "NIIOMTPLABOPARMBETZHELBETRABSBOMONIMONKONOTDTEKHSTROMONT",
-    "HUMGECOPEFECOFTESPECPER",
-    "LASERIATMOSPHERICSENVIRONSCICON",
-    "@(*#&@",
-    "}!$^+=",
-    "|{;:'\"",
-    "[%~>?]",
-    "_<|#*~",
-    "^@!-/;",
-    "><+&|?"
+    {
+        word: `3fG4a'3]f"|.23`,
+        translations: {}
+    },
+    {
+        word: `5%lP).2hsQ3/<`,
+        translations: {}
+    },
+    {
+        word: `fIq,_/{>\\2dAv3`,
+        translations: {}
+    }
 ];

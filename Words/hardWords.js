@@ -1,22 +1,134 @@
-const hard = ["Accurate", "Banana", "Computer", "Dinosaur", "Elephant", "Furniture", "Galaxy", "Hippopotamus",
-    "Illustrate", "Jubilant", "Kaleidoscope", "Labyrinth", "Microscope", "Neighborhood", "Octagonal",
-    "Parliament", "Questionnaire", "Rhinoceros", "Spectacular", "Thermostat", "Unanimous", "Vacuum",
-    "Wanderlust", "Xylophone", "Yellowish", "Zucchini", "Accessibility", "Biodegradable", "Congregation",
-    "Diversification", "Enthusiastic", "Flabbergasted", "Geographical", "Humanitarian", "Impersonation",
-    "Jurisdiction", "Kilometer", "Linguistic", "Metropolitan", "Negotiation", "Ornamental", "Philosophical",
-    "Quantitative", "Reciprocal", "Sophisticated", "Technological", "Underestimated", "Vulnerability",
-    "Watershed", "Extravagant", "Youthfulness", "Zoological", "Anthropology", "Bureaucracy", "Circumference",
-    "Discombobulate", "Existential", "Fibonacci", "Gravitational", "Homogeneous", "Iconoclast", "Juxtapose",
-    "Kaleidoscopic", "Logarithmic", "Monochromatic", "Nomenclature", "Onomatopoeia", "Prognosticate",
-    "Quintessential", "Rambunctious", "Stereotype", "Trigonometry", "Unprecedented", "Vertigo", "Whimsical",
-    "Exponential", "Yttrium", "Zephyr", "Accommodate", "Belligerent", "Catastrophic", "Differential",
-    "Eccentric", "Facetious", "Gregarious", "Harmonious", "Inconsequential", "Jurisprudence", "Kinetoscope",
-    "Luminescent", "Misanthrope", "Nonchalant", "Oxymoron", "Photosynthesis", "Quarantine", "Rendezvous",
-    "Synonymous", "Translucent", "Ubiquitous", "Vicarious", "Whistleblower", "Extrapolate", "Yield", "Zenith",
-    "Supercalifragilisticexpialidocious", "NASA", "FBI", "CIA", "USA", "NATO", "UNICEF", "EU", "HTML", "UFO",
-    "ASAP", "ATM", "BBC",
-    "CEO", "CFO", "COP", "COVID", "CPU", "DIY", "DMV", "DNA", "DOA", "EOD", "ESPN", "FOMO",
-    "FYI", "GPS", "HDMI", "HIV", "IBM", "ICU", "ID", "IRS", "JPEG", "LCD", "LED", "LGBT",
-    "LOL", "MBTI", "MIA", "MVP", "NBA", "NFL", "NSA", "PDF", "PPE", "PSA", "PTO", "RAM",
-    "RGB", "RSVP", "SAT", "SUV", "TBA", "TBD", "TSA", "USB", "VIP", "VR", "WHO", "WIFI", "WWF", "CAPTCHA"
+const hard = [
+    {
+        word: 'Accurate',
+        translations: {
+            spanish: 'preciso',
+            french: 'précis',
+            portuguese: 'preciso',
+            german: 'genau',
+            japanese: '正確な, せいかくな',
+            italian: 'preciso'
+        }
+    },
+    {
+        word: 'banana',
+        translations: {
+            spanish: 'plátano',
+            french: 'banane',
+            portuguese: 'banana',
+            german: 'Banane',
+            japanese: 'バナナ',
+            italian: 'banana'
+        }
+    },
+    {
+        word: 'computer',
+        translations: {
+            spanish: 'computadora',
+            french: 'ordinateur',
+            portuguese: 'computador',
+            german: 'Computer',
+            japanese: 'コンピュータ',
+            italian: 'computer'
+        }
+    },
+    {
+        word: 'Dinosaur',
+        translations: {
+            spanish: 'dinosaurio',
+            french: 'dinosaure',
+            portuguese: 'dinossauro',
+            german: 'Dinosaurier',
+            japanese: '恐竜, きょうりゅう',
+            italian: 'dinosauro'
+        }
+    },
+    {
+        word: 'elephant',
+        translations: {
+            spanish: 'elefante',
+            french: 'éléphant',
+            portuguese: 'elefante',
+            german: 'Elefant',
+            japanese: '象, ぞう',
+            italian: 'elefante'
+        }
+    },
+    {
+        word: 'furniture',
+        translations: {
+            spanish: 'muebles',
+            french: 'meubles',
+            portuguese: 'móveis',
+            german: 'Möbel',
+            japanese: '家具, かぐ',
+            italian: 'mobili'
+        }
+    },
+    {
+        word: 'Galaxy',
+        translations: {
+            spanish: 'galaxia',
+            french: 'galaxie',
+            portuguese: 'galáxia',
+            german: 'Galaxie',
+            japanese: '銀河, ぎんが',
+            italian: 'galassia'
+        }
+    },
+    {
+        word: 'Hippopotamus',
+        translations: {
+            spanish: 'hipopótamo',
+            french: 'hippopotame',
+            portuguese: 'hipopótamo',
+            german: 'Nilpferd',
+            japanese: 'カバ',
+            italian: 'ippopotamo'
+        }
+    },
+    {
+        word: 'NASA',
+        translations: {
+            spanish: 'NASA',
+            french: 'NASA',
+            portuguese: 'NASA',
+            german: 'NASA',
+            japanese: 'NASA',
+            italian: 'NASA'
+        }
+    },
+    {
+        word: 'FBI',
+        translations: {
+            spanish: 'FBI',
+            french: 'FBI',
+            portuguese: 'FBI',
+            german: 'FBI',
+            japanese: 'FBI',
+            italian: 'FBI'
+        }
+    },
+    {
+        word: 'CIA',
+        translations: {
+            spanish: 'CIA',
+            french: 'CIA',
+            portuguese: 'CIA',
+            german: 'CIA',
+            japanese: 'CIA',
+            italian: 'CIA'
+        }
+    },
+    {
+        word: 'USA',
+        translations: {
+            spanish: 'EE.UU.',
+            french: 'États-Unis',
+            portuguese: 'EUA',
+            german: 'USA',
+            japanese: 'アメリカ合衆国, アメリカがっしゅうこく',
+            italian: 'USA'
+        }
+    }
 ];
