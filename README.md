@@ -13,6 +13,8 @@ This is a web application that allows users to test their typing speed. Users ty
 ## Screenshots
 ![Typing Test Screenshot](https://drive.google.com/uc?export=view&id=1Kl9y4v5Y5O9eDtYJx9eTMlUJCK0vr2EE)
 
+![Typing Test Screenshot](https://drive.google.com/uc?export=view&id=1RUPhalhEL7pHxWAy8cgnFcllGpHmCmhx)
+
 ## Instructions
 1. Visit [https://21david.github.io/Typing-Website-Prototype](https://21david.github.io/Typing-Website-Prototype)
 1. Optionally customize your test using the options in the top row:
@@ -27,6 +29,7 @@ This is a web application that allows users to test their typing speed. Users ty
     - If it is not responding, click on the text box labeled "Type the words here" or click "Restart" or refresh the page.
 1. Review your results:
     - When the timer ends, your WPM and other statistics are displayed automatically.
+        - **Note:** Words are calculated as being 5 characters long (including the space), regardless of actual word lengths. This is because 5 is the approximate length of the average word. Threfore, the WPM result is calculated as (correct letters) ÷ 5, rounded up.
     - Assuming easy mode, the average typing speed is between 30 - 50 WPM. A good goal for casual typers is 50 - 70 WPM, and 70 - 100 WPM for professional typers.
 1. Restart or customize:
     - Click "Restart" or adjust the options to take a new test.
