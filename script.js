@@ -1,12 +1,12 @@
 const NUM_WORDS = 1500;
-let currentWords = easy;
+let currentWordSet = easy;
 let currentWordsTranslated = easySpanishTranslations;
 let translation = true;
 let translationLanguage = 'spanish';
 let language = 'english'
 let actualTestWords = [];
 let userWordsArr = [];
-let currWord = 0;
+let currWordIdx = 0;
 let correctWords = 0;
 let correctLetters = 0;
 let wrongWords = 0;
@@ -27,7 +27,7 @@ function setUp() {
     actualTestWordsTranslated = [];
     userWordsArr = [];
     wrongArr = [];
-    currWord = correctWords = correctLetters = wrongWords = 0;
+    currWordIdx = correctWords = correctLetters = wrongWords = 0;
     testInProgress = showingResults = false;
     textbox.value = '';
     currTestNum += 1;
@@ -36,16 +36,16 @@ function setUp() {
     timerObj.innerHTML = LENGTH_SECONDS;
 
     // Set up random words
-    for(let i = 0; i < NUM_WORDS; i++) {
-        let randIdx = Math.floor(Math.random() * currentWords.length);
-        actualTestWords.push(currentWords[randIdx]);
+    for (let i = 0; i < NUM_WORDS; i++) {
+        let randIdx = Math.floor(Math.random() * currentWordSet.length);
+        actualTestWords.push(currentWordSet[randIdx]);
         actualTestWordsTranslated.push(currentWordsTranslated[randIdx]);
     }
 
     // Put it on the HTML
     let words = document.getElementById('words');
     let htmlTestWords = `<span id="0" class="current">${actualTestWords[0]}</span> `;
-    for(let i = 1; i < actualTestWords.length; i++) {
+    for (let i = 1; i < actualTestWords.length; i++) {
         htmlTestWords += `<span id="${i}">${actualTestWords[i]}</span> `;
     }
     words.innerHTML = htmlTestWords;
@@ -63,7 +63,7 @@ function setUp() {
         let tooltip = document.createElement('span');
         tooltip.setAttribute('class', 'tooltip');
         tooltip.setAttribute('id', 'tooltip');
-        tooltip.innerHTML = actualTestWordsTranslated[currWord];
+        tooltip.innerHTML = actualTestWordsTranslated[currWordIdx];
         currWordElement.append(tooltip);
     }
 
@@ -73,12 +73,12 @@ function setUp() {
     let currSpan = wordsP.children[i];
     let currOffset = currSpan.offsetTop;
     currSpan = wordsP.children[++i];
-    while(currSpan.offsetTop === currOffset) {
+    while (currSpan.offsetTop === currOffset) {
         currSpan.setAttribute('style', 'visibility: visible;');
         currSpan = wordsP.children[++i];
     }
     currOffset = currSpan.offsetTop;
-    while(currSpan.offsetTop === currOffset) {
+    while (currSpan.offsetTop === currOffset) {
         currSpan.setAttribute('style', 'visibility: visible;');
         currSpan = wordsP.children[++i];
     }
@@ -91,22 +91,22 @@ function newCharacterInput() {
     let input = textbox.value;
 
     // EARTHQUAKE EASTER EGG
-    if(input == 'EARTHQUAKE') {
+    if (input == 'EARTHQUAKE') {
         let earthquakeCss = document.getElementById('earthquake') || document.createElement('link');
         earthquakeCss.setAttribute('id', 'earthquake');
         earthquakeCss.setAttribute('rel', 'stylesheet');
         earthquakeCss.setAttribute('href', 'earthquake.css');
         document.head.appendChild(earthquakeCss);
     }
-    else if(input == '!EARTHQUAKE') {
+    else if (input == '!EARTHQUAKE') {
         let earthquakeCss = document.getElementById('earthquake');
-        if(earthquakeCss) earthquakeCss.parentNode.removeChild(earthquakeCss);
+        if (earthquakeCss) earthquakeCss.parentNode.removeChild(earthquakeCss);
     }
 
-    if(showingResults) return;
+    if (showingResults) return;
 
     // Start the test if user input the first letter
-    if(!testInProgress && !showingResults) {
+    if (!testInProgress && !showingResults) {
         testInProgress = true;
         textbox.setAttribute('placeholder', '');
         startCountdown(currTestNum);
@@ -114,72 +114,67 @@ function newCharacterInput() {
     }
 
     try {
-        if (actualTestWords[currWord].indexOf(input) != 0) {  // User misspelled
-            document.getElementById(String(currWord)).setAttribute('class', 'current-wrong');
+        if (actualTestWords[currWordIdx].indexOf(input) != 0) {  // User misspelled
+            document.getElementById(String(currWordIdx)).setAttribute('class', 'current-wrong');
         }
         else {
-            document.getElementById(String(currWord)).setAttribute('class', 'current');
+            document.getElementById(String(currWordIdx)).setAttribute('class', 'current');
         }
     }
-    catch (TypeError) {}
+    catch (TypeError) { }
 
     // Reset textbox when user presses space
-    if(input.endsWith(' ')) {
+    if (input.endsWith(' ')) {
         processWord(input);
         textbox.value = '';
-        document.getElementById(String(currWord)).setAttribute('class', 'current');
+        document.getElementById(String(currWordIdx)).setAttribute('class', 'current');
     }
 }
 
 // Start the actual timer for the test
 function startCountdown(testNum) {
-    setTimeout(() => { doneTyping(testNum) }, 1000 * LENGTH_SECONDS);
+    setTimeout(() => { finishedTest(testNum) }, 1000 * LENGTH_SECONDS);
 }
 
 // Executes when the user finishes a word
 function processWord(userWord) {
-    userWord = userWord.substring(0, userWord.length-1);
+    userWord = userWord.substring(0, userWord.length - 1);
     userWordsArr.push(userWord);
     textbox.value = '';
 
     // Correct
-    if(userWord == actualTestWords[currWord]) {
-        document.getElementById(String(currWord)).setAttribute('class', 'done-correct');
+    if (userWord == actualTestWords[currWordIdx]) {
+        document.getElementById(String(currWordIdx)).setAttribute('class', 'done-correct');
         correctWords += 1;
         correctLetters += userWord.length + 1;
     }
     // Wrong
     else {
-        document.getElementById(String(currWord)).setAttribute('class', 'done-wrong');
+        document.getElementById(String(currWordIdx)).setAttribute('class', 'done-wrong');
         wrongWords += 1;
-        wrongArr.push(' ' + userWord + ' (<strong>' + actualTestWords[currWord] + '</strong>)');
-        console.log(userWord);
+        wrongArr.push(' ' + userWord + ' (<strong>' + actualTestWords[currWordIdx] + '</strong>)');
     }
 
     // Move the line when a row is finished
-    let currWordElement = document.getElementById(String(currWord));
-    let nextWordElement = document.getElementById(String(currWord+1));
+    let currWordElement = document.getElementById(String(currWordIdx));
+    let nextWordElement = document.getElementById(String(currWordIdx + 1));
     if (nextWordElement.offsetTop !== currWordElement.offsetTop) {  // new row
         moveLine();
     }
 
-    currWord += 1;
+    currWordIdx += 1;
 
     if (translation) {
         // remove current tooltip
-        console.log('removing prev tooltip', currWordElement);
         let prevTooltip = document.getElementById('tooltip');
-        console.log('prev tt', prevTooltip);
         currWordElement.removeChild(prevTooltip);
 
         // Add tooltip on top of word
         currWordElement = nextWordElement;
-        console.log('', currWordElement);
-        console.log('', currWordElement.offsetLeft);
         let tooltip = document.createElement('span');
         tooltip.setAttribute('class', 'tooltip');
         tooltip.setAttribute('id', 'tooltip');
-        tooltip.innerHTML = actualTestWordsTranslated[currWord];
+        tooltip.innerHTML = actualTestWordsTranslated[currWordIdx];
         currWordElement.append(tooltip);
     }
 }
@@ -189,36 +184,35 @@ let linesMoved = 0;
 // Executes when the user finishes a row
 // Bug: Resizing the window messes up the rows
 function moveLine() {
-    console.log('moveLine()', );
     // Make current row invisible
-    let currWordCopy = currWord;  // get the new word's index
-    let currSpan = wordsP.children[currWordCopy];  // get new word's span element
+    let currWordIdxCopy = currWordIdx;  // get the new word's index
+    let currSpan = wordsP.children[currWordIdxCopy];  // get new word's span element
     wordsDiv.scrollTo(0, currSpan.offsetTop);
     currSpan.setAttribute('style', 'visibility: hidden;');
     let currOffset = currSpan.offsetTop;
-    while(currWordCopy > 0 && wordsP.children[--currWordCopy].offsetTop === currOffset) {
-        wordsP.children[currWordCopy].setAttribute('style', 'visibility: hidden;');
+    while (currWordIdxCopy > 0 && wordsP.children[--currWordIdxCopy].offsetTop === currOffset) {
+        wordsP.children[currWordIdxCopy].setAttribute('style', 'visibility: hidden;');
     }
 
     // Make the row after the next one visible
     // Bug: if it nears the end, it gives 
     //      TypeError: Cannot read properties of undefined (reading 'offsetTop')
-    currWordCopy = currWord+1;
-    currOffset = wordsP.children[currWordCopy].offsetTop;
-    while(wordsP.children[currWordCopy++].offsetTop === currOffset);
-    currWordCopy--;
-    currOffset = wordsP.children[currWordCopy].offsetTop;
-    while(wordsP.children[currWordCopy].offsetTop === currOffset) {
-        wordsP.children[currWordCopy++].setAttribute('style', 'visibility: visible;');
+    currWordIdxCopy = currWordIdx + 1;
+    currOffset = wordsP.children[currWordIdxCopy].offsetTop;
+    while (wordsP.children[currWordIdxCopy++].offsetTop === currOffset);
+    currWordIdxCopy--;
+    currOffset = wordsP.children[currWordIdxCopy].offsetTop;
+    while (wordsP.children[currWordIdxCopy].offsetTop === currOffset) {
+        wordsP.children[currWordIdxCopy++].setAttribute('style', 'visibility: visible;');
     }
 
     linesMoved += 1;
 }
 
 // When the user finishes the test
-function doneTyping(testNum) {
+function finishedTest(testNum) {
     // if the user restarted at some point, cancel this function call
-    if(testNum !== currTestNum)
+    if (testNum !== currTestNum)
         return;
 
     testInProgress = false;
@@ -232,14 +226,14 @@ function doneTyping(testNum) {
 
     switch (language) {
         case 'english':
-            message = WPM? 'Great job.' : 'You suck!';
+            message = WPM ? 'Great job.' : 'You suck!';
             resultsDiv.innerHTML = `
             <h3>${message} You typed at <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> WPM!</h3>
             <p><strong>Correct words: </strong> ${correctWords}</p>
             <p><strong>Correct letters: </strong> ${correctLetters}</p>
             <p><strong>Wrong words: </strong> ${wrongWords}</p>
             `;
-            if(wrongArr.length) {
+            if (wrongArr.length) {
                 resultsDiv.innerHTML += `
                     <p><strong>Wrong words: </strong> ${wrongArr}</p>
                 `;
@@ -247,14 +241,14 @@ function doneTyping(testNum) {
             break;
 
         case 'spanish':
-            message = WPM? '¡Buen trabajo!' : 'Lastima.';
+            message = WPM ? '¡Buen trabajo!' : 'Lastima.';
             resultsDiv.innerHTML = `
                 <h3>${message} Escribiste a <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> palabras por minuto. </h3>
                 <p><strong>Palabras correctas: </strong> ${correctWords}</p>
                 <p><strong>Letras correctas: </strong> ${correctLetters}</p>
                 <p><strong>Palabras incorrectas: </strong> ${wrongWords}</p>
             `;
-            if(wrongArr.length) {
+            if (wrongArr.length) {
                 resultsDiv.innerHTML += `
                     <p><strong>Palabras incorrectas: </strong> ${wrongArr}</p>
                 `;
@@ -267,11 +261,11 @@ function doneTyping(testNum) {
 // It may be prone to bugs with reset button, should analyze all edge cases
 // including resetting at the last second
 function timer(timeLeft, testNum) {
-    if(timeLeft === -1 || testNum !== currTestNum)
+    if (timeLeft === -1 || testNum !== currTestNum)
         return;
 
     timerObj.innerHTML = timeLeft;
-    if(testInProgress)
+    if (testInProgress)
         setTimeout(() => {
             timer(timeLeft - 1, testNum);
         }, 1000);
@@ -280,19 +274,19 @@ function timer(timeLeft, testNum) {
 function changeDifficulty(option) {
     switch (option) {
         case 'easy':
-            currentWords = easy;
+            currentWordSet = easy;
             break;
 
         case 'medium':
-            currentWords = easy.concat(medium);
+            currentWordSet = easy.concat(medium);
             break;
 
         case 'hard':
-            currentWords = medium.concat(hard);
+            currentWordSet = medium.concat(hard);
             break;
 
         case 'expert':
-            currentWords = hard.concat(expert);
+            currentWordSet = hard.concat(expert);
             break;
     }
 
@@ -311,7 +305,7 @@ function changeLanguage(option) {
     switch (option) {
         case 'english':
             language = 'english';
-            currentWords = easy;
+            currentWordSet = easy;
             document.getElementById('restart').innerText = 'Restart';
             document.getElementById('textbox').setAttribute('placeholder', 'Type the words here');
             document.getElementById('difficultyLi').style.display = "";
@@ -327,14 +321,14 @@ function changeLanguage(option) {
             break;
         case 'spanish':
             language = 'spanish';
-            currentWords = easySpanish;
+            currentWordSet = easySpanish;
             document.getElementById('restart').innerText = 'Reiniciar';
             document.getElementById('textbox').setAttribute('placeholder', 'Escribe las palabras aqui');
             document.getElementById('difficultyLi').style.display = "none";
             document.getElementById('translation-label').innerText = '¿Traducir?'
 
             // Set duration options
-            newDurationOptions = ['15 segundos', '30 segundos', '1 minuto','2 minutos', '5 minutos', '10 minutos'];
+            newDurationOptions = ['15 segundos', '30 segundos', '1 minuto', '2 minutos', '5 minutos', '10 minutos'];
             currentDurationOptions = document.getElementById('duration').options;
             i = 0;
             for (let option of currentDurationOptions) {
