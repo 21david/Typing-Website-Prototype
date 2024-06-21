@@ -1,130 +1,130 @@
 // Tentative word set
-words.french = {};
-words.french.easy = [
+words.portuguese = {};
+words.portuguese.easy = [
     {
-        word: 'maison',
+        word: 'casa',
         translations: {
             english: 'house',
             spanish: 'casa',
-            portuguese: 'casa',
+            french: 'maison',
             japanese: '家'
         }
     },
     {
-        word: 'chien',
+        word: 'cachorro',
         translations: {
             english: 'dog',
             spanish: 'perro',
-            portuguese: 'cachorro',
+            french: 'chien',
             japanese: '犬'
         }
     },
     {
-        word: 'chat',
+        word: 'gato',
         translations: {
             english: 'cat',
             spanish: 'gato',
-            portuguese: 'gato',
+            french: 'chat',
             japanese: '猫'
         }
     },
     {
-        word: 'nourriture',
+        word: 'comida',
         translations: {
             english: 'food',
             spanish: 'comida',
-            portuguese: 'comida',
+            french: 'nourriture',
             japanese: '食べ物'
         }
     },
     {
-        word: 'eau',
+        word: 'água',
         translations: {
             english: 'water',
             spanish: 'agua',
-            portuguese: 'água',
+            french: 'eau',
             japanese: '水'
         }
     },
     {
-        word: 'livre',
+        word: 'escola',
+        translations: {
+            english: 'school',
+            spanish: 'escuela',
+            french: 'école',
+            japanese: '学校'
+        }
+    },
+    {
+        word: 'livro',
         translations: {
             english: 'book',
             spanish: 'libro',
-            portuguese: 'livro',
+            french: 'livre',
             japanese: '本'
         }
     },
     {
-        word: 'ami',
+        word: 'amigo',
         translations: {
             english: 'friend',
             spanish: 'amigo',
-            portuguese: 'amigo',
+            french: 'ami',
             japanese: '友達'
         }
     },
     {
-        word: 'famille',
+        word: 'família',
         translations: {
             english: 'family',
             spanish: 'familia',
-            portuguese: 'família',
+            french: 'famille',
             japanese: '家族'
         }
     },
     {
-        word: 'voiture',
+        word: 'carro',
         translations: {
             english: 'car',
             spanish: 'coche',
-            portuguese: 'carro',
+            french: 'voiture',
             japanese: '車'
         }
     },
     {
-        word: 'ville',
-        translations: {
-            english: 'city',
-            spanish: 'ciudad',
-            portuguese: 'cidade',
-            japanese: '市'
-        }
-    },
-    {
-        word: 'travail',
+        word: 'trabalho',
         translations: {
             english: 'job',
             spanish: 'trabajo',
-            portuguese: 'trabalho',
+            french: 'travail',
             japanese: '仕事'
         }
     },
     {
-        word: 'argent',
+        word: 'dinheiro',
         translations: {
             english: 'money',
             spanish: 'dinero',
-            portuguese: 'dinheiro',
+            french: 'argent',
             japanese: 'お金'
         }
     },
     {
-        word: 'amour',
+        word: 'amor',
         translations: {
             english: 'love',
             spanish: 'amor',
-            portuguese: 'amor',
+            french: 'amour',
             japanese: '愛'
         }
     },
     {
-        word: 'heureux',
+        word: 'feliz',
         translations: {
             english: 'happy',
             spanish: 'feliz',
-            portuguese: 'feliz',
-            japanese: '幸せな'
+            french: 'heureux',
+            japanese: '幸せ'
         }
     },
     {
@@ -132,242 +132,287 @@ words.french.easy = [
         translations: {
             english: 'sad',
             spanish: 'triste',
-            portuguese: 'triste',
+            french: 'triste',
             japanese: '悲しい'
         }
     },
     {
-        word: 'bon',
+        word: 'bom',
         translations: {
             english: 'good',
             spanish: 'bueno',
-            portuguese: 'bom',
+            french: 'bon',
             japanese: '良い'
         }
     },
     {
-        word: 'mauvais',
+        word: 'mau',
         translations: {
             english: 'bad',
             spanish: 'malo',
-            portuguese: 'mau',
+            french: 'mauvais',
             japanese: '悪い'
         }
     },
     {
-        word: 'nouveau',
+        word: 'novo',
         translations: {
             english: 'new',
             spanish: 'nuevo',
-            portuguese: 'novo',
+            french: 'nouveau',
             japanese: '新しい'
         }
     },
     {
-        word: 'vieux',
+        word: 'velho',
         translations: {
             english: 'old',
             spanish: 'viejo',
-            portuguese: 'velho',
+            french: 'vieux',
             japanese: '古い'
         }
     },
     {
-        word: 'jeune',
+        word: 'jovem',
         translations: {
             english: 'young',
             spanish: 'joven',
-            portuguese: 'jovem',
+            french: 'jeune',
             japanese: '若い'
         }
     },
     {
-        word: 'tard',
+        word: 'cedo',
+        translations: {
+            english: 'early',
+            spanish: 'temprano',
+            french: 'tôt',
+            japanese: '早い'
+        }
+    },
+    {
+        word: 'tarde',
         translations: {
             english: 'late',
             spanish: 'tarde',
-            portuguese: 'tarde',
+            french: 'tard',
             japanese: '遅い'
         }
     },
     {
-        word: 'chaud',
+        word: 'quente',
         translations: {
             english: 'hot',
             spanish: 'calor',
-            portuguese: 'quente',
+            french: 'chaud',
             japanese: '暑い'
         }
     },
     {
-        word: 'froid',
+        word: 'frio',
         translations: {
             english: 'cold',
             spanish: 'frio',
-            portuguese: 'frio',
+            french: 'froid',
             japanese: '寒い'
         }
     },
     {
-        word: 'sombre',
+        word: 'luz',
+        translations: {
+            english: 'light',
+            spanish: 'luz',
+            french: 'lumière',
+            japanese: '光'
+        }
+    },
+    {
+        word: 'escuro',
         translations: {
             english: 'dark',
             spanish: 'oscuro',
-            portuguese: 'escuro',
+            french: 'sombre',
             japanese: '暗い'
         }
     },
     {
-        word: 'fort',
+        word: 'forte',
         translations: {
             english: 'strong',
             spanish: 'fuerte',
-            portuguese: 'forte',
+            french: 'fort',
             japanese: '強い'
         }
     },
     {
-        word: 'faible',
+        word: 'saúde',
         translations: {
-            english: 'weak',
-            spanish: 'debil',
-            portuguese: 'fraco',
-            japanese: '弱い'
+            english: 'health',
+            spanish: 'salud',
+            french: 'santé',
+            japanese: '健康'
         }
     },
     {
-        word: 'malade',
+        word: 'doente',
         translations: {
             english: 'sick',
             spanish: 'enfermo',
-            portuguese: 'doente',
-            japanese: '病気の'
+            french: 'malade',
+            japanese: '病気'
         }
     },
     {
-        word: 'riche',
+        word: 'rico',
         translations: {
             english: 'rich',
             spanish: 'rico',
-            portuguese: 'rico',
-            japanese: '豊富な'
+            french: 'riche',
+            japanese: '裕福'
         }
     },
     {
-        word: 'pauvre',
+        word: 'pobre',
         translations: {
             english: 'poor',
             spanish: 'pobre',
-            portuguese: 'pobre',
+            french: 'pauvre',
             japanese: '貧しい'
         }
     },
     {
-        word: 'propre',
+        word: 'limpo',
         translations: {
             english: 'clean',
             spanish: 'limpio',
-            portuguese: 'limpo',
-            japanese: '清潔な'
+            french: 'propre',
+            japanese: 'きれい'
         }
     },
     {
-        word: 'sale',
+        word: 'sujo',
         translations: {
             english: 'dirty',
             spanish: 'sucio',
-            portuguese: 'sujo',
+            french: 'sale',
             japanese: '汚い'
         }
     },
     {
-        word: 'sûr',
+        word: 'seguro',
         translations: {
             english: 'safe',
             spanish: 'seguro',
-            portuguese: 'seguro',
-            japanese: '安全な'
+            french: 'sûr',
+            japanese: '安全'
         }
     },
     {
-        word: 'danger',
+        word: 'perigo',
         translations: {
             english: 'danger',
             spanish: 'peligro',
-            portuguese: 'perigo',
+            french: 'danger',
             japanese: '危険'
         }
     },
     {
-        word: 'bruit',
+        word: 'barulho',
         translations: {
             english: 'noise',
             spanish: 'ruido',
-            portuguese: 'barulho',
-            japanese: '騒音'
+            french: 'bruit',
+            japanese: '音'
         }
     },
     {
-        word: 'silence',
+        word: 'silêncio',
         translations: {
             english: 'quiet',
             spanish: 'silencio',
-            portuguese: 'silêncio',
+            french: 'silence',
             japanese: '静けさ'
         }
     },
     {
-        word: 'important',
+        word: 'famoso',
+        translations: {
+            english: 'famous',
+            spanish: 'famoso',
+            french: 'célèbre',
+            japanese: '有名'
+        }
+    },
+    {
+        word: 'importante',
         translations: {
             english: 'important',
             spanish: 'importante',
-            portuguese: 'importante',
-            japanese: '重要な'
+            french: 'important',
+            japanese: '重要'
         }
     },
     {
-        word: 'un',
+        word: 'interessante',
         translations: {
-            english: 'one',
-            spanish: 'uno',
-            portuguese: 'um',
-            japanese: '一'
+            english: 'interesting',
+            spanish: 'interesante',
+            french: 'intéressant',
+            japanese: '面白い'
         }
     },
     {
-        word: 'deux',
+        word: 'aburrido',
         translations: {
-            english: 'two',
-            spanish: 'dos',
-            portuguese: 'dois',
-            japanese: '二'
+            english: 'boring',
+            spanish: 'aburrido',
+            french: 'ennuyeux',
+            japanese: '退屈'
         }
     },
     {
-        word: 'trois',
+        word: 'amável',
         translations: {
-            english: 'three',
-            spanish: 'tres',
-            portuguese: 'três',
-            japanese: '三'
+            english: 'kind',
+            spanish: 'amable',
+            french: 'gentil',
+            japanese: '親切'
         }
     },
     {
-        word: 'quatre',
+        word: 'educado',
         translations: {
-            english: 'four',
-            spanish: 'cuatro',
-            portuguese: 'quatro',
-            japanese: '四'
+            english: 'polite',
+            spanish: 'educado',
+            french: 'poli',
+            japanese: '礼儀正しい'
         }
     },
     {
-        word: 'cinq',
+        word: 'grosseiro',
         translations: {
-            english: 'five',
-            spanish: 'cinco',
-            portuguese: 'cinco',
-            japanese: '五'
+            english: 'rude',
+            spanish: 'grosero',
+            french: 'impoli',
+            japanese: '無礼'
+        }
+    },
+    {
+        word: 'inteligente',
+        translations: {
+            english: 'smart',
+            spanish: 'inteligente',
+            french: 'intelligent',
+            japanese: '賢い'
+        }
+    },
+    {
+        word: 'tolo',
+        translations: {
+            english: 'stupid',
+            spanish: 'tonto',
+            french: 'stupide',
+            japanese: '愚か'
         }
     }
 ];

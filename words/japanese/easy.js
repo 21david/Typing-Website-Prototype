@@ -1,1822 +1,1750 @@
 // Tentative word set
-words.spanish = {};
-words.spanish.easy = [
+words.japanese = {};
+words.japanese.easy = [
     {
-        word: 'casa',
+        word: '家',
         translations: {
             english: 'house',
+            spanish: 'casa',
             french: 'maison',
-            portuguese: 'casa',
-            japanese: '家'
+            portuguese: 'casa'
         }
     },
     {
-        word: 'perro',
+        word: '犬',
         translations: {
             english: 'dog',
+            spanish: 'perro',
             french: 'chien',
-            portuguese: 'cachorro',
-            japanese: '犬'
+            portuguese: 'cachorro'
         }
     },
     {
-        word: 'gato',
+        word: '猫',
         translations: {
             english: 'cat',
+            spanish: 'gato',
             french: 'chat',
-            portuguese: 'gato',
-            japanese: '猫'
+            portuguese: 'gato'
         }
     },
     {
-        word: 'comida',
+        word: '食べ物',
         translations: {
             english: 'food',
+            spanish: 'comida',
             french: 'nourriture',
-            portuguese: 'comida',
-            japanese: '食べ物'
+            portuguese: 'comida'
         }
     },
     {
-        word: 'agua',
+        word: '水',
         translations: {
             english: 'water',
+            spanish: 'agua',
             french: 'eau',
-            portuguese: 'água',
-            japanese: '水'
+            portuguese: 'água'
         }
     },
     {
-        word: 'escuela',
-        translations: {
-            english: 'school',
-            french: 'école',
-            portuguese: 'escola',
-            japanese: '学校'
-        }
-    },
-    {
-        word: 'libro',
+        word: '本',
         translations: {
             english: 'book',
+            spanish: 'libro',
             french: 'livre',
-            portuguese: 'livro',
-            japanese: '本'
+            portuguese: 'livro'
         }
     },
     {
-        word: 'amigo',
+        word: '友達',
         translations: {
             english: 'friend',
+            spanish: 'amigo',
             french: 'ami',
-            portuguese: 'amigo',
-            japanese: '友達'
+            portuguese: 'amigo'
         }
     },
     {
-        word: 'familia',
+        word: '家族',
         translations: {
             english: 'family',
+            spanish: 'familia',
             french: 'famille',
-            portuguese: 'família',
-            japanese: '家族'
+            portuguese: 'família'
         }
     },
     {
-        word: 'coche',
+        word: '車',
         translations: {
             english: 'car',
+            spanish: 'coche',
             french: 'voiture',
-            portuguese: 'carro',
-            japanese: '車'
+            portuguese: 'carro'
         }
     },
     {
-        word: 'trabajo',
+        word: '学校',
+        translations: {
+            english: 'school',
+            spanish: 'escuela',
+            french: 'école',
+            portuguese: 'escola'
+        }
+    },
+    {
+        word: '仕事',
         translations: {
             english: 'job',
+            spanish: 'trabajo',
             french: 'travail',
-            portuguese: 'trabalho',
-            japanese: '仕事'
+            portuguese: 'trabalho'
         }
     },
     {
-        word: 'dinero',
+        word: 'お金',
         translations: {
             english: 'money',
+            spanish: 'dinero',
             french: 'argent',
-            portuguese: 'dinheiro',
-            japanese: 'お金'
+            portuguese: 'dinheiro'
         }
     },
     {
-        word: 'amor',
+        word: '愛',
         translations: {
             english: 'love',
+            spanish: 'amor',
             french: 'amour',
-            portuguese: 'amor',
-            japanese: '愛'
+            portuguese: 'amor'
         }
     },
     {
-        word: 'feliz',
+        word: '幸せ',
         translations: {
             english: 'happy',
+            spanish: 'feliz',
             french: 'heureux',
-            portuguese: 'feliz',
-            japanese: '幸せ'
+            portuguese: 'feliz'
         }
     },
     {
-        word: 'triste',
+        word: '悲しい',
         translations: {
             english: 'sad',
+            spanish: 'triste',
             french: 'triste',
-            portuguese: 'triste',
-            japanese: '悲しい'
+            portuguese: 'triste'
         }
     },
     {
-        word: 'bueno',
+        word: '良い',
         translations: {
             english: 'good',
+            spanish: 'bueno',
             french: 'bon',
-            portuguese: 'bom',
-            japanese: '良い'
+            portuguese: 'bom'
         }
     },
     {
-        word: 'malo',
+        word: '悪い',
         translations: {
             english: 'bad',
+            spanish: 'malo',
             french: 'mauvais',
-            portuguese: 'mau',
-            japanese: '悪い'
+            portuguese: 'mau'
         }
     },
     {
-        word: 'nuevo',
+        word: '新しい',
         translations: {
             english: 'new',
+            spanish: 'nuevo',
             french: 'nouveau',
-            portuguese: 'novo',
-            japanese: '新しい'
+            portuguese: 'novo'
         }
     },
     {
-        word: 'viejo',
+        word: '古い',
         translations: {
             english: 'old',
+            spanish: 'viejo',
             french: 'vieux',
-            portuguese: 'velho',
-            japanese: '古い'
+            portuguese: 'velho'
         }
     },
     {
-        word: 'joven',
+        word: '若い',
         translations: {
             english: 'young',
+            spanish: 'joven',
             french: 'jeune',
-            portuguese: 'jovem',
-            japanese: '若い'
+            portuguese: 'jovem'
         }
     },
     {
-        word: 'temprano',
+        word: '早い',
         translations: {
             english: 'early',
+            spanish: 'temprano',
             french: 'tôt',
-            portuguese: 'cedo',
-            japanese: '早い'
+            portuguese: 'cedo'
         }
     },
     {
-        word: 'tarde',
+        word: '遅い',
         translations: {
             english: 'late',
+            spanish: 'tarde',
             french: 'tard',
-            portuguese: 'tarde',
-            japanese: '遅い'
+            portuguese: 'tarde'
         }
     },
     {
-        word: 'calor',
+        word: '暑い',
         translations: {
             english: 'hot',
+            spanish: 'calor',
             french: 'chaud',
-            portuguese: 'quente',
-            japanese: '暑い'
+            portuguese: 'quente'
         }
     },
     {
-        word: 'frio',
+        word: '寒い',
         translations: {
             english: 'cold',
+            spanish: 'frio',
             french: 'froid',
-            portuguese: 'frio',
-            japanese: '寒い'
+            portuguese: 'frio'
         }
     },
     {
-        word: 'luz',
+        word: '明るい',
         translations: {
             english: 'light',
+            spanish: 'luz',
             french: 'lumière',
-            portuguese: 'luz',
-            japanese: '光'
+            portuguese: 'luz'
         }
     },
     {
-        word: 'oscuro',
+        word: '暗い',
         translations: {
             english: 'dark',
+            spanish: 'oscuro',
             french: 'sombre',
-            portuguese: 'escuro',
-            japanese: '暗い'
+            portuguese: 'escuro'
         }
     },
     {
-        word: 'fuerte',
+        word: '強い',
         translations: {
             english: 'strong',
+            spanish: 'fuerte',
             french: 'fort',
-            portuguese: 'forte',
-            japanese: '強い'
+            portuguese: 'forte'
         }
     },
     {
-        word: 'salud',
-        translations: {
-            english: 'health',
-            french: 'santé',
-            portuguese: 'saúde',
-            japanese: '健康'
-        }
-    },
-    {
-        word: 'enfermo',
+        word: '病気',
         translations: {
             english: 'sick',
+            spanish: 'enfermo',
             french: 'malade',
-            portuguese: 'doente',
-            japanese: '病気'
+            portuguese: 'doente'
         }
     },
     {
-        word: 'rico',
+        word: '豊か',
         translations: {
             english: 'rich',
+            spanish: 'rico',
             french: 'riche',
-            portuguese: 'rico',
-            japanese: '金持ち'
+            portuguese: 'rico'
         }
     },
     {
-        word: 'pobre',
+        word: '貧しい',
         translations: {
             english: 'poor',
+            spanish: 'pobre',
             french: 'pauvre',
-            portuguese: 'pobre',
-            japanese: '貧しい'
+            portuguese: 'pobre'
         }
     },
     {
-        word: 'limpio',
+        word: '綺麗',
         translations: {
             english: 'clean',
+            spanish: 'limpio',
             french: 'propre',
-            portuguese: 'limpo',
-            japanese: 'きれい'
+            portuguese: 'limpo'
         }
     },
     {
-        word: 'sucio',
+        word: '汚い',
         translations: {
             english: 'dirty',
+            spanish: 'sucio',
             french: 'sale',
-            portuguese: 'sujo',
-            japanese: '汚い'
+            portuguese: 'sujo'
         }
     },
     {
-        word: 'seguro',
+        word: '安全',
         translations: {
             english: 'safe',
+            spanish: 'seguro',
             french: 'sûr',
-            portuguese: 'seguro',
-            japanese: '安全'
+            portuguese: 'seguro'
         }
     },
     {
-        word: 'peligro',
+        word: '危険',
         translations: {
             english: 'danger',
+            spanish: 'peligro',
             french: 'danger',
-            portuguese: 'perigo',
-            japanese: '危険'
+            portuguese: 'perigo'
         }
     },
     {
-        word: 'ruido',
+        word: '音',
         translations: {
-            english: 'noise',
-            french: 'bruit',
-            portuguese: 'ruído',
-            japanese: '騒音'
+            english: 'sound',
+            spanish: 'sonido',
+            french: 'son',
+            portuguese: 'som'
         }
     },
     {
-        word: 'silencio',
+        word: '静か',
         translations: {
             english: 'quiet',
-            french: 'silence',
-            portuguese: 'silêncio',
-            japanese: '静か'
+            spanish: 'silencio',
+            french: 'silencieux',
+            portuguese: 'silêncio'
         }
     },
     {
-        word: 'famoso',
+        word: '有名',
         translations: {
             english: 'famous',
+            spanish: 'famoso',
             french: 'célèbre',
-            portuguese: 'famoso',
-            japanese: '有名'
+            portuguese: 'famoso'
         }
     },
     {
-        word: 'importante',
+        word: '重要',
         translations: {
             english: 'important',
+            spanish: 'importante',
             french: 'important',
-            portuguese: 'importante',
-            japanese: '重要'
+            portuguese: 'importante'
         }
     },
     {
-        word: 'interesante',
+        word: '面白い',
         translations: {
             english: 'interesting',
+            spanish: 'interesante',
             french: 'intéressant',
-            portuguese: 'interessante',
-            japanese: '面白い'
+            portuguese: 'interessante'
         }
     },
     {
-        word: 'aburrido',
+        word: '退屈',
         translations: {
             english: 'boring',
+            spanish: 'aburrido',
             french: 'ennuyeux',
-            portuguese: 'chato',
-            japanese: '退屈'
+            portuguese: 'entediante'
         }
     },
     {
-        word: 'amable',
+        word: '親切',
         translations: {
             english: 'kind',
+            spanish: 'amable',
             french: 'gentil',
-            portuguese: 'amável',
-            japanese: '親切'
+            portuguese: 'amável'
         }
     },
     {
-        word: 'educado',
-        translations: {
-            english: 'polite',
-            french: 'poli',
-            portuguese: 'educado',
-            japanese: '礼儀正しい'
-        }
-    },
-    {
-        word: 'grosero',
-        translations: {
-            english: 'rude',
-            french: 'impoli',
-            portuguese: 'grosseiro',
-            japanese: '無礼'
-        }
-    },
-    {
-        word: 'inteligente',
+        word: '賢い',
         translations: {
             english: 'smart',
+            spanish: 'inteligente',
             french: 'intelligent',
-            portuguese: 'inteligente',
-            japanese: '賢い'
+            portuguese: 'inteligente'
         }
     },
     {
-        word: 'tonto',
+        word: '馬鹿',
         translations: {
             english: 'stupid',
+            spanish: 'estúpido',
             french: 'stupide',
-            portuguese: 'tonto',
-            japanese: 'ばか'
+            portuguese: 'estúpido'
         }
     },
     {
-        word: 'afortunado',
-        translations: {
-            english: 'lucky',
-            french: 'chanceux',
-            portuguese: 'sortudo',
-            japanese: '運がいい'
-        }
-    },
-    {
-        word: 'diferente',
+        word: '異なる',
         translations: {
             english: 'different',
+            spanish: 'diferente',
             french: 'différent',
-            portuguese: 'diferente',
-            japanese: '違う'
+            portuguese: 'diferente'
         }
     },
     {
-        word: 'igual',
+        word: '同じ',
         translations: {
             english: 'same',
+            spanish: 'igual',
             french: 'même',
-            portuguese: 'igual',
-            japanese: '同じ'
+            portuguese: 'mesmo'
         }
     },
     {
-        word: 'chistoso',
+        word: '楽しい',
         translations: {
-            english: 'funny',
-            french: 'drôle',
-            portuguese: 'engraçado',
-            japanese: '面白い'
+            english: 'fun',
+            spanish: 'divertido',
+            french: 'amusant',
+            portuguese: 'divertido'
         }
     },
     {
-        word: 'serio',
+        word: '真面目',
         translations: {
             english: 'serious',
+            spanish: 'serio',
             french: 'sérieux',
-            portuguese: 'sério',
-            japanese: '真剣'
+            portuguese: 'sério'
         }
     },
     {
-        word: 'uno',
+        word: '一つ',
         translations: {
             english: 'one',
+            spanish: 'uno',
             french: 'un',
-            portuguese: 'um',
-            japanese: '一'
+            portuguese: 'um'
         }
     },
     {
-        word: 'dos',
+        word: '二つ',
         translations: {
             english: 'two',
+            spanish: 'dos',
             french: 'deux',
-            portuguese: 'dois',
-            japanese: '二'
+            portuguese: 'dois'
         }
     },
     {
-        word: 'tres',
+        word: '三つ',
         translations: {
             english: 'three',
+            spanish: 'tres',
             french: 'trois',
-            portuguese: 'três',
-            japanese: '三'
+            portuguese: 'três'
         }
     },
     {
-        word: 'cuatro',
+        word: '四つ',
         translations: {
             english: 'four',
+            spanish: 'cuatro',
             french: 'quatre',
-            portuguese: 'quatro',
-            japanese: '四'
+            portuguese: 'quatro'
         }
     },
     {
-        word: 'cinco',
+        word: '五つ',
         translations: {
             english: 'five',
+            spanish: 'cinco',
             french: 'cinq',
-            portuguese: 'cinco',
-            japanese: '五'
+            portuguese: 'cinco'
         }
     },
     {
-        word: 'seis',
-        translations: {
-            english: 'six',
-            french: 'six',
-            portuguese: 'seis',
-            japanese: '六'
-        }
-    },
-    {
-        word: 'siete',
-        translations: {
-            english: 'seven',
-            french: 'sept',
-            portuguese: 'sete',
-            japanese: '七'
-        }
-    },
-    {
-        word: 'ocho',
-        translations: {
-            english: 'eight',
-            french: 'huit',
-            portuguese: 'oito',
-            japanese: '八'
-        }
-    },
-    {
-        word: 'nueve',
-        translations: {
-            english: 'nine',
-            french: 'neuf',
-            portuguese: 'nove',
-            japanese: '九'
-        }
-    },
-    {
-        word: 'diez',
-        translations: {
-            english: 'ten',
-            french: 'dix',
-            portuguese: 'dez',
-            japanese: '十'
-        }
-    },
-    {
-        word: 'color',
+        word: '色',
         translations: {
             english: 'color',
+            spanish: 'color',
             french: 'couleur',
-            portuguese: 'cor',
-            japanese: '色'
+            portuguese: 'cor'
         }
     },
     {
-        word: 'azul',
+        word: '青',
         translations: {
             english: 'blue',
+            spanish: 'azul',
             french: 'bleu',
-            portuguese: 'azul',
-            japanese: '青'
+            portuguese: 'azul'
         }
     },
     {
-        word: 'rojo',
+        word: '赤',
         translations: {
             english: 'red',
+            spanish: 'rojo',
             french: 'rouge',
-            portuguese: 'vermelho',
-            japanese: '赤'
+            portuguese: 'vermelho'
         }
     },
     {
-        word: 'verde',
+        word: '緑',
         translations: {
             english: 'green',
+            spanish: 'verde',
             french: 'vert',
-            portuguese: 'verde',
-            japanese: '緑'
+            portuguese: 'verde'
         }
     },
     {
-        word: 'amarillo',
+        word: '黄色',
         translations: {
             english: 'yellow',
+            spanish: 'amarillo',
             french: 'jaune',
-            portuguese: 'amarelo',
-            japanese: '黄'
+            portuguese: 'amarelo'
         }
     },
     {
-        word: 'blanco',
+        word: '白',
         translations: {
             english: 'white',
+            spanish: 'blanco',
             french: 'blanc',
-            portuguese: 'branco',
-            japanese: '白'
+            portuguese: 'branco'
         }
     },
     {
-        word: 'negro',
+        word: '黒',
         translations: {
             english: 'black',
+            spanish: 'negro',
             french: 'noir',
-            portuguese: 'preto',
-            japanese: '黒'
+            portuguese: 'preto'
         }
     },
     {
-        word: 'morado',
+        word: '紫',
         translations: {
             english: 'purple',
+            spanish: 'morado',
             french: 'violet',
-            portuguese: 'roxo',
-            japanese: '紫'
+            portuguese: 'roxo'
         }
     },
     {
-        word: 'rosa',
+        word: 'ピンク',
         translations: {
             english: 'pink',
+            spanish: 'rosa',
             french: 'rose',
-            portuguese: 'rosa',
-            japanese: 'ピンク'
+            portuguese: 'rosa'
         }
     },
     {
-        word: 'marron',
+        word: '茶色',
         translations: {
             english: 'brown',
+            spanish: 'marrón',
             french: 'marron',
-            portuguese: 'marrom',
-            japanese: '茶色'
+            portuguese: 'marrom'
         }
     },
     {
-        word: 'gris',
+        word: '灰色',
         translations: {
             english: 'gray',
+            spanish: 'gris',
             french: 'gris',
-            portuguese: 'cinza',
-            japanese: '灰色'
+            portuguese: 'cinza'
         }
     },
     {
-        word: 'lunes',
+        word: '月曜日',
         translations: {
             english: 'Monday',
+            spanish: 'lunes',
             french: 'lundi',
-            portuguese: 'segunda-feira',
-            japanese: '月曜日'
+            portuguese: 'segunda-feira'
         }
     },
     {
-        word: 'martes',
+        word: '火曜日',
         translations: {
             english: 'Tuesday',
+            spanish: 'martes',
             french: 'mardi',
-            portuguese: 'terça-feira',
-            japanese: '火曜日'
+            portuguese: 'terça-feira'
         }
     },
     {
-        word: 'jueves',
+        word: '水曜日',
+        translations: {
+            english: 'Wednesday',
+            spanish: 'miércoles',
+            french: 'mercredi',
+            portuguese: 'quarta-feira'
+        }
+    },
+    {
+        word: '木曜日',
         translations: {
             english: 'Thursday',
+            spanish: 'jueves',
             french: 'jeudi',
-            portuguese: 'quinta-feira',
-            japanese: '木曜日'
+            portuguese: 'quinta-feira'
         }
     },
     {
-        word: 'viernes',
+        word: '金曜日',
         translations: {
             english: 'Friday',
+            spanish: 'viernes',
             french: 'vendredi',
-            portuguese: 'sexta-feira',
-            japanese: '金曜日'
+            portuguese: 'sexta-feira'
         }
     },
     {
-        word: 'domingo',
+        word: '土曜日',
+        translations: {
+            english: 'Saturday',
+            spanish: 'sábado',
+            french: 'samedi',
+            portuguese: 'sábado'
+        }
+    },
+    {
+        word: '日曜日',
         translations: {
             english: 'Sunday',
+            spanish: 'domingo',
             french: 'dimanche',
-            portuguese: 'domingo',
-            japanese: '日曜日'
+            portuguese: 'domingo'
         }
     },
     {
-        word: 'enero',
+        word: '一月',
         translations: {
             english: 'January',
+            spanish: 'enero',
             french: 'janvier',
-            portuguese: 'janeiro',
-            japanese: '一月'
+            portuguese: 'janeiro'
         }
     },
     {
-        word: 'febrero',
+        word: '二月',
         translations: {
             english: 'February',
+            spanish: 'febrero',
             french: 'février',
-            portuguese: 'fevereiro',
-            japanese: '二月'
+            portuguese: 'fevereiro'
         }
     },
     {
-        word: 'marzo',
+        word: '三月',
         translations: {
             english: 'March',
+            spanish: 'marzo',
             french: 'mars',
-            portuguese: 'março',
-            japanese: '三月'
+            portuguese: 'março'
         }
     },
     {
-        word: 'abril',
+        word: '四月',
         translations: {
             english: 'April',
+            spanish: 'abril',
             french: 'avril',
-            portuguese: 'abril',
-            japanese: '四月'
+            portuguese: 'abril'
         }
     },
     {
-        word: 'mayo',
+        word: '五月',
         translations: {
             english: 'May',
+            spanish: 'mayo',
             french: 'mai',
-            portuguese: 'maio',
-            japanese: '五月'
+            portuguese: 'maio'
         }
     },
     {
-        word: 'junio',
+        word: '六月',
         translations: {
             english: 'June',
+            spanish: 'junio',
             french: 'juin',
-            portuguese: 'junho',
-            japanese: '六月'
+            portuguese: 'junho'
         }
     },
     {
-        word: 'julio',
+        word: '七月',
         translations: {
             english: 'July',
+            spanish: 'julio',
             french: 'juillet',
-            portuguese: 'julho',
-            japanese: '七月'
+            portuguese: 'julho'
         }
     },
     {
-        word: 'agosto',
+        word: '八月',
         translations: {
             english: 'August',
+            spanish: 'agosto',
             french: 'août',
-            portuguese: 'agosto',
-            japanese: '八月'
+            portuguese: 'agosto'
         }
     },
     {
-        word: 'septiembre',
+        word: '九月',
         translations: {
             english: 'September',
+            spanish: 'septiembre',
             french: 'septembre',
-            portuguese: 'setembro',
-            japanese: '九月'
+            portuguese: 'setembro'
         }
     },
     {
-        word: 'octubre',
+        word: '十月',
         translations: {
             english: 'October',
+            spanish: 'octubre',
             french: 'octobre',
-            portuguese: 'outubro',
-            japanese: '十月'
+            portuguese: 'outubro'
         }
     },
     {
-        word: 'noviembre',
+        word: '十一月',
         translations: {
             english: 'November',
+            spanish: 'noviembre',
             french: 'novembre',
-            portuguese: 'novembro',
-            japanese: '十一月'
+            portuguese: 'novembro'
         }
     },
     {
-        word: 'diciembre',
+        word: '十二月',
         translations: {
             english: 'December',
+            spanish: 'diciembre',
             french: 'décembre',
-            portuguese: 'dezembro',
-            japanese: '十二月'
+            portuguese: 'dezembro'
         }
     },
     {
-        word: 'el',
-        translations: {
-            english: 'the',
-            french: 'le',
-            portuguese: 'o',
-            japanese: 'その'
-        }
-    },
-    {
-        word: 'y',
+        word: 'そして',
         translations: {
             english: 'and',
+            spanish: 'y',
             french: 'et',
-            portuguese: 'e',
-            japanese: 'そして'
+            portuguese: 'e'
         }
     },
     {
-        word: 'un',
-        translations: {
-            english: 'a',
-            french: 'un',
-            portuguese: 'um',
-            japanese: '一つ'
-        }
-    },
-    {
-        word: 'pero',
+        word: 'でも',
         translations: {
             english: 'but',
+            spanish: 'pero',
             french: 'mais',
-            portuguese: 'mas',
-            japanese: 'しかし'
+            portuguese: 'mas'
         }
     },
     {
-        word: 'entonces',
+        word: 'それで',
         translations: {
             english: 'so',
+            spanish: 'entonces',
             french: 'alors',
-            portuguese: 'então',
-            japanese: 'それで'
+            portuguese: 'então'
         }
     },
     {
-        word: 'en',
+        word: 'で',
         translations: {
             english: 'in',
+            spanish: 'en',
             french: 'dans',
-            portuguese: 'em',
-            japanese: 'に'
+            portuguese: 'em'
         }
     },
     {
-        word: 'sobre',
+        word: '上に',
         translations: {
             english: 'on',
+            spanish: 'sobre',
             french: 'sur',
-            portuguese: 'sobre',
-            japanese: '上に'
+            portuguese: 'sobre'
         }
     },
     {
-        word: 'con',
+        word: 'と一緒に',
         translations: {
             english: 'with',
+            spanish: 'con',
             french: 'avec',
-            portuguese: 'com',
-            japanese: 'と一緒に'
+            portuguese: 'com'
         }
     },
     {
-        word: 'para',
+        word: 'ために',
         translations: {
             english: 'for',
+            spanish: 'para',
             french: 'pour',
-            portuguese: 'para',
-            japanese: 'ために'
+            portuguese: 'para'
         }
     },
     {
-        word: 'de',
+        word: 'の',
         translations: {
             english: 'of',
+            spanish: 'de',
             french: 'de',
-            portuguese: 'de',
-            japanese: 'の'
+            portuguese: 'de'
         }
     },
     {
-        word: 'a',
+        word: 'へ',
         translations: {
             english: 'to',
+            spanish: 'a',
             french: 'à',
-            portuguese: 'para',
-            japanese: 'へ'
+            portuguese: 'para'
         }
     },
     {
-        word: 'desde',
+        word: 'から',
         translations: {
             english: 'from',
+            spanish: 'desde',
             french: 'depuis',
-            portuguese: 'de',
-            japanese: 'から'
+            portuguese: 'de'
         }
     },
     {
-        word: 'por',
+        word: 'によって',
         translations: {
             english: 'by',
+            spanish: 'por',
             french: 'par',
-            portuguese: 'por',
-            japanese: 'により'
+            portuguese: 'por'
         }
     },
     {
-        word: 'arriba',
+        word: '上',
         translations: {
             english: 'up',
+            spanish: 'arriba',
             french: 'en haut',
-            portuguese: 'cima',
-            japanese: '上に'
+            portuguese: 'para cima'
         }
     },
     {
-        word: 'abajo',
+        word: '下',
         translations: {
             english: 'down',
+            spanish: 'abajo',
             french: 'en bas',
-            portuguese: 'baixo',
-            japanese: '下に'
+            portuguese: 'para baixo'
         }
     },
     {
-        word: 'izquierda',
+        word: '左',
         translations: {
             english: 'left',
+            spanish: 'izquierda',
             french: 'gauche',
-            portuguese: 'esquerda',
-            japanese: '左に'
+            portuguese: 'esquerda'
         }
     },
     {
-        word: 'derecha',
+        word: '右',
         translations: {
             english: 'right',
+            spanish: 'derecha',
             french: 'droite',
-            portuguese: 'direita',
-            japanese: '右に'
+            portuguese: 'direita'
         }
     },
     {
-        word: 'correr',
+        word: '走る',
         translations: {
             english: 'run',
+            spanish: 'correr',
             french: 'courir',
-            portuguese: 'correr',
-            japanese: '走る'
+            portuguese: 'correr'
         }
     },
     {
-        word: 'esconder',
+        word: '隠れる',
         translations: {
             english: 'hide',
+            spanish: 'esconder',
             french: 'cacher',
-            portuguese: 'esconder',
-            japanese: '隠れる'
+            portuguese: 'esconder'
         }
     },
     {
-        word: 'comer',
+        word: '食べる',
         translations: {
             english: 'eat',
+            spanish: 'comer',
             french: 'manger',
-            portuguese: 'comer',
-            japanese: '食べる'
+            portuguese: 'comer'
         }
     },
     {
-        word: 'beber',
+        word: '飲む',
         translations: {
             english: 'drink',
+            spanish: 'beber',
             french: 'boire',
-            portuguese: 'beber',
-            japanese: '飲む'
+            portuguese: 'beber'
         }
     },
     {
-        word: 'leer',
+        word: '読む',
         translations: {
             english: 'read',
+            spanish: 'leer',
             french: 'lire',
-            portuguese: 'ler',
-            japanese: '読む'
+            portuguese: 'ler'
         }
     },
     {
-        word: 'escribir',
+        word: '書く',
         translations: {
             english: 'write',
+            spanish: 'escribir',
             french: 'écrire',
-            portuguese: 'escrever',
-            japanese: '書く'
+            portuguese: 'escrever'
         }
     },
     {
-        word: 'jugar',
+        word: '遊ぶ',
         translations: {
             english: 'play',
+            spanish: 'jugar',
             french: 'jouer',
-            portuguese: 'brincar',
-            japanese: '遊ぶ'
+            portuguese: 'jogar'
         }
     },
     {
-        word: 'caminar',
+        word: '歩く',
         translations: {
             english: 'walk',
+            spanish: 'caminar',
             french: 'marcher',
-            portuguese: 'caminhar',
-            japanese: '歩く'
+            portuguese: 'andar'
         }
     },
     {
-        word: 'saltar',
+        word: '跳ぶ',
         translations: {
             english: 'jump',
+            spanish: 'saltar',
             french: 'sauter',
-            portuguese: 'pular',
-            japanese: 'ジャンプする'
+            portuguese: 'pular'
         }
     },
     {
-        word: 'sentar',
+        word: '座る',
         translations: {
             english: 'sit',
+            spanish: 'sentar',
             french: 's’asseoir',
-            portuguese: 'sentar',
-            japanese: '座る'
+            portuguese: 'sentar'
         }
     },
     {
-        word: 'pararse',
+        word: '立つ',
         translations: {
             english: 'stand',
+            spanish: 'pararse',
             french: 'se lever',
-            portuguese: 'ficar de pé',
-            japanese: '立つ'
+            portuguese: 'ficar de pé'
         }
     },
     {
-        word: 'dormir',
+        word: '寝る',
         translations: {
             english: 'sleep',
+            spanish: 'dormir',
             french: 'dormir',
-            portuguese: 'dormir',
-            japanese: '眠る'
+            portuguese: 'dormir'
         }
     },
     {
-        word: 'despertar',
+        word: '起きる',
         translations: {
             english: 'wake',
+            spanish: 'despertar',
             french: 'réveiller',
-            portuguese: 'acordar',
-            japanese: '目覚める'
+            portuguese: 'acordar'
         }
     },
     {
-        word: 'cantar',
+        word: '歌う',
         translations: {
             english: 'sing',
+            spanish: 'cantar',
             french: 'chanter',
-            portuguese: 'cantar',
-            japanese: '歌う'
+            portuguese: 'cantar'
         }
     },
     {
-        word: 'bailar',
+        word: '踊る',
         translations: {
             english: 'dance',
+            spanish: 'bailar',
             french: 'danser',
-            portuguese: 'dançar',
-            japanese: '踊る'
+            portuguese: 'dançar'
         }
     },
     {
-        word: 'hablar',
+        word: '話す',
         translations: {
             english: 'talk',
+            spanish: 'hablar',
             french: 'parler',
-            portuguese: 'falar',
-            japanese: '話す'
+            portuguese: 'falar'
         }
     },
     {
-        word: 'escuchar',
+        word: '聞く',
         translations: {
             english: 'listen',
+            spanish: 'escuchar',
             french: 'écouter',
-            portuguese: 'ouvir',
-            japanese: '聞く'
+            portuguese: 'escutar'
         }
     },
     {
-        word: 'ver',
+        word: '見る',
         translations: {
             english: 'see',
+            spanish: 'ver',
             french: 'voir',
-            portuguese: 'ver',
-            japanese: '見る'
+            portuguese: 'ver'
         }
     },
     {
-        word: 'oir',
+        word: '聞こえる',
         translations: {
             english: 'hear',
+            spanish: 'oir',
             french: 'entendre',
-            portuguese: 'ouvir',
-            japanese: '聞こえる'
+            portuguese: 'ouvir'
         }
     },
     {
-        word: 'oler',
+        word: '匂う',
         translations: {
             english: 'smell',
+            spanish: 'oler',
             french: 'sentir',
-            portuguese: 'cheirar',
-            japanese: 'におい'
+            portuguese: 'cheirar'
         }
     },
     {
-        word: 'tocar',
+        word: '触る',
         translations: {
             english: 'touch',
+            spanish: 'tocar',
             french: 'toucher',
-            portuguese: 'tocar',
-            japanese: '触る'
+            portuguese: 'tocar'
         }
     },
     {
-        word: 'probar',
+        word: '味わう',
         translations: {
             english: 'taste',
+            spanish: 'probar',
             french: 'goûter',
-            portuguese: 'provar',
-            japanese: '味わう'
+            portuguese: 'provar'
         }
     },
     {
-        word: 'aprender',
+        word: '学ぶ',
         translations: {
             english: 'learn',
+            spanish: 'aprender',
             french: 'apprendre',
-            portuguese: 'aprender',
-            japanese: '学ぶ'
+            portuguese: 'aprender'
         }
     },
     {
-        word: 'gustar',
+        word: '好き',
         translations: {
             english: 'like',
+            spanish: 'gustar',
             french: 'aimer',
-            portuguese: 'gostar',
-            japanese: '好き'
+            portuguese: 'gostar'
         }
     },
     {
-        word: 'odiar',
+        word: '嫌い',
         translations: {
             english: 'hate',
+            spanish: 'odiar',
             french: 'détester',
-            portuguese: 'odiar',
-            japanese: '嫌い'
+            portuguese: 'odiar'
         }
     },
     {
-        word: 'querer',
+        word: '欲しい',
         translations: {
             english: 'want',
+            spanish: 'querer',
             french: 'vouloir',
-            portuguese: 'querer',
-            japanese: '欲しい'
+            portuguese: 'querer'
         }
     },
     {
-        word: 'necesitar',
+        word: '必要',
         translations: {
             english: 'need',
+            spanish: 'necesitar',
             french: 'avoir besoin',
-            portuguese: 'precisar',
-            japanese: '必要'
+            portuguese: 'precisar'
         }
     },
     {
-        word: 'hacer',
+        word: '作る',
         translations: {
             english: 'make',
+            spanish: 'hacer',
             french: 'faire',
-            portuguese: 'fazer',
-            japanese: '作る'
+            portuguese: 'fazer'
         }
     },
     {
-        word: 'decir',
+        word: '言う',
         translations: {
             english: 'say',
+            spanish: 'decir',
             french: 'dire',
-            portuguese: 'dizer',
-            japanese: '言う'
+            portuguese: 'dizer'
         }
     },
     {
-        word: 'ir',
+        word: '行く',
         translations: {
             english: 'go',
+            spanish: 'ir',
             french: 'aller',
-            portuguese: 'ir',
-            japanese: '行く'
+            portuguese: 'ir'
         }
     },
     {
-        word: 'venir',
+        word: '来る',
         translations: {
             english: 'come',
+            spanish: 'venir',
             french: 'venir',
-            portuguese: 'vir',
-            japanese: '来る'
+            portuguese: 'vir'
         }
     },
     {
-        word: 'tomar',
+        word: '取る',
         translations: {
             english: 'take',
+            spanish: 'tomar',
             french: 'prendre',
-            portuguese: 'tomar',
-            japanese: '取る'
+            portuguese: 'pegar'
         }
     },
     {
-        word: 'obtener',
+        word: '得る',
         translations: {
             english: 'get',
+            spanish: 'obtener',
             french: 'obtenir',
-            portuguese: 'obter',
-            japanese: '得る'
+            portuguese: 'obter'
         }
     },
     {
-        word: 'dar',
+        word: '与える',
         translations: {
             english: 'give',
+            spanish: 'dar',
             french: 'donner',
-            portuguese: 'dar',
-            japanese: '与える'
+            portuguese: 'dar'
         }
     },
     {
-        word: 'saber',
+        word: '知る',
         translations: {
             english: 'know',
+            spanish: 'saber',
             french: 'savoir',
-            portuguese: 'saber',
-            japanese: '知る'
+            portuguese: 'saber'
         }
     },
     {
-        word: 'pensar',
+        word: '考える',
         translations: {
             english: 'think',
+            spanish: 'pensar',
             french: 'penser',
-            portuguese: 'pensar',
-            japanese: '考える'
+            portuguese: 'pensar'
         }
     },
     {
-        word: 'usar',
+        word: '使う',
         translations: {
             english: 'use',
+            spanish: 'usar',
             french: 'utiliser',
-            portuguese: 'usar',
-            japanese: '使う'
+            portuguese: 'usar'
         }
     },
     {
-        word: 'encontrar',
+        word: '見つける',
         translations: {
             english: 'find',
+            spanish: 'encontrar',
             french: 'trouver',
-            portuguese: 'encontrar',
-            japanese: '見つける'
+            portuguese: 'encontrar'
         }
     },
     {
-        word: 'preguntar',
+        word: '尋ねる',
         translations: {
             english: 'ask',
+            spanish: 'preguntar',
             french: 'demander',
-            portuguese: 'perguntar',
-            japanese: '質問する'
+            portuguese: 'perguntar'
         }
     },
     {
-        word: 'trabajar',
+        word: '働く',
         translations: {
             english: 'work',
+            spanish: 'trabajar',
             french: 'travailler',
-            portuguese: 'trabalhar',
-            japanese: '働く'
+            portuguese: 'trabalhar'
         }
     },
     {
-        word: 'ayudar',
+        word: '助ける',
         translations: {
             english: 'help',
+            spanish: 'ayudar',
             french: 'aider',
-            portuguese: 'ajudar',
-            japanese: '助ける'
+            portuguese: 'ajudar'
         }
     },
     {
-        word: 'mostrar',
+        word: '見せる',
         translations: {
             english: 'show',
+            spanish: 'mostrar',
             french: 'montrer',
-            portuguese: 'mostrar',
-            japanese: '見せる'
+            portuguese: 'mostrar'
         }
     },
     {
-        word: 'probar',
+        word: '試す',
         translations: {
             english: 'try',
+            spanish: 'probar',
             french: 'essayer',
-            portuguese: 'tentar',
-            japanese: '試す'
+            portuguese: 'tentar'
         }
     },
     {
-        word: 'llamar',
+        word: '呼ぶ',
         translations: {
             english: 'call',
+            spanish: 'llamar',
             french: 'appeler',
-            portuguese: 'chamar',
-            japanese: '呼ぶ'
+            portuguese: 'chamar'
         }
     },
     {
-        word: 'guardar',
+        word: '保つ',
         translations: {
             english: 'keep',
+            spanish: 'guardar',
             french: 'garder',
-            portuguese: 'guardar',
-            japanese: '保つ'
+            portuguese: 'manter'
         }
     },
     {
-        word: 'empezar',
+        word: '始める',
         translations: {
             english: 'start',
+            spanish: 'empezar',
             french: 'commencer',
-            portuguese: 'começar',
-            japanese: '始める'
+            portuguese: 'começar'
         }
     },
     {
-        word: 'girar',
+        word: '回す',
         translations: {
             english: 'turn',
+            spanish: 'girar',
             french: 'tourner',
-            portuguese: 'virar',
-            japanese: '曲がる'
+            portuguese: 'virar'
         }
     },
     {
-        word: 'mover',
+        word: '動く',
         translations: {
             english: 'move',
+            spanish: 'mover',
             french: 'bouger',
-            portuguese: 'mover',
-            japanese: '動く'
+            portuguese: 'mover'
         }
     },
     {
-        word: 'vivir',
+        word: '生きる',
         translations: {
             english: 'live',
+            spanish: 'vivir',
             french: 'vivre',
-            portuguese: 'viver',
-            japanese: '生きる'
+            portuguese: 'viver'
         }
     },
     {
-        word: 'creer',
+        word: '信じる',
         translations: {
             english: 'believe',
+            spanish: 'creer',
             french: 'croire',
-            portuguese: 'crer',
-            japanese: '信じる'
+            portuguese: 'acreditar'
         }
     },
     {
-        word: 'traer',
+        word: '持ってくる',
         translations: {
             english: 'bring',
+            spanish: 'traer',
             french: 'apporter',
-            portuguese: 'trazer',
-            japanese: '持ってくる'
+            portuguese: 'trazer'
         }
     },
     {
-        word: 'suceder',
+        word: '起こる',
         translations: {
             english: 'happen',
+            spanish: 'suceder',
             french: 'arriver',
-            portuguese: 'acontecer',
-            japanese: '起こる'
+            portuguese: 'acontecer'
         }
     },
     {
-        word: 'debe',
+        word: 'しなければならない',
         translations: {
             english: 'must',
+            spanish: 'debe',
             french: 'devoir',
-            portuguese: 'deve',
-            japanese: '〜しなければならない'
+            portuguese: 'deve'
         }
     },
     {
-        word: 'proveer',
+        word: '提供する',
         translations: {
             english: 'provide',
+            spanish: 'proveer',
             french: 'fournir',
-            portuguese: 'fornecer',
-            japanese: '提供する'
+            portuguese: 'fornecer'
         }
     },
     {
-        word: 'entender',
+        word: '理解する',
         translations: {
             english: 'understand',
+            spanish: 'entender',
             french: 'comprendre',
-            portuguese: 'entender',
-            japanese: '理解する'
+            portuguese: 'entender'
         }
     },
     {
-        word: 'poner',
+        word: '置く',
         translations: {
             english: 'put',
+            spanish: 'poner',
             french: 'mettre',
-            portuguese: 'colocar',
-            japanese: '置く'
+            portuguese: 'colocar'
         }
     },
     {
-        word: 'significar',
+        word: '意味する',
         translations: {
             english: 'mean',
+            spanish: 'significar',
             french: 'signifier',
-            portuguese: 'significar',
-            japanese: '意味する'
+            portuguese: 'significar'
         }
     },
     {
-        word: 'irse',
+        word: '去る',
         translations: {
             english: 'leave',
+            spanish: 'irse',
             french: 'partir',
-            portuguese: 'sair',
-            japanese: '去る'
+            portuguese: 'sair'
         }
     },
     {
-        word: 'seguir',
+        word: '従う',
         translations: {
             english: 'follow',
+            spanish: 'seguir',
             french: 'suivre',
-            portuguese: 'seguir',
-            japanese: '従う'
+            portuguese: 'seguir'
         }
     },
     {
-        word: 'juego',
+        word: 'ゲーム',
         translations: {
             english: 'game',
+            spanish: 'juego',
             french: 'jeu',
-            portuguese: 'jogo',
-            japanese: 'ゲーム'
+            portuguese: 'jogo'
         }
     },
     {
-        word: 'calle',
+        word: '通り',
         translations: {
             english: 'street',
+            spanish: 'calle',
             french: 'rue',
-            portuguese: 'rua',
-            japanese: '通り'
+            portuguese: 'rua'
         }
     },
     {
-        word: 'rio',
+        word: '川',
         translations: {
             english: 'river',
+            spanish: 'rio',
             french: 'rivière',
-            portuguese: 'rio',
-            japanese: '川'
+            portuguese: 'rio'
         }
     },
     {
-        word: 'mar',
+        word: '海',
         translations: {
             english: 'sea',
+            spanish: 'mar',
             french: 'mer',
-            portuguese: 'mar',
-            japanese: '海'
+            portuguese: 'mar'
         }
     },
     {
-        word: 'bosque',
+        word: '森',
         translations: {
             english: 'forest',
+            spanish: 'bosque',
             french: 'forêt',
-            portuguese: 'floresta',
-            japanese: '森'
+            portuguese: 'floresta'
         }
     },
     {
-        word: 'jardin',
+        word: '庭',
         translations: {
             english: 'garden',
+            spanish: 'jardín',
             french: 'jardin',
-            portuguese: 'jardim',
-            japanese: '庭'
+            portuguese: 'jardim'
         }
     },
     {
-        word: 'imagen',
+        word: '画像',
         translations: {
             english: 'picture',
+            spanish: 'imagen',
             french: 'image',
-            portuguese: 'imagem',
-            japanese: '画像'
+            portuguese: 'imagem'
         }
     },
     {
-        word: 'foto',
+        word: '写真',
         translations: {
             english: 'photo',
+            spanish: 'foto',
             french: 'photo',
-            portuguese: 'foto',
-            japanese: '写真'
+            portuguese: 'foto'
         }
     },
     {
-        word: 'mundo',
+        word: '世界',
         translations: {
             english: 'world',
+            spanish: 'mundo',
             french: 'monde',
-            portuguese: 'mundo',
-            japanese: '世界'
+            portuguese: 'mundo'
         }
     },
     {
-        word: 'tierra',
+        word: '地球',
         translations: {
             english: 'earth',
+            spanish: 'tierra',
             french: 'terre',
-            portuguese: 'terra',
-            japanese: '地球'
+            portuguese: 'terra'
         }
     },
     {
-        word: 'madre',
+        word: '母',
         translations: {
             english: 'mother',
+            spanish: 'madre',
             french: 'mère',
-            portuguese: 'mãe',
-            japanese: '母'
+            portuguese: 'mãe'
         }
     },
     {
-        word: 'padre',
+        word: '父',
         translations: {
             english: 'father',
+            spanish: 'padre',
             french: 'père',
-            portuguese: 'pai',
-            japanese: '父'
+            portuguese: 'pai'
         }
     },
     {
-        word: 'hermano',
+        word: '兄',
         translations: {
             english: 'brother',
+            spanish: 'hermano',
             french: 'frère',
-            portuguese: 'irmão',
-            japanese: '兄弟'
+            portuguese: 'irmão'
         }
     },
     {
-        word: 'hermana',
+        word: '姉',
         translations: {
             english: 'sister',
+            spanish: 'hermana',
             french: 'sœur',
-            portuguese: 'irmã',
-            japanese: '姉妹'
+            portuguese: 'irmã'
         }
     },
     {
-        word: 'nombre',
+        word: '名前',
         translations: {
             english: 'name',
+            spanish: 'nombre',
             french: 'nom',
-            portuguese: 'nome',
-            japanese: '名前'
+            portuguese: 'nome'
         }
     },
     {
-        word: 'historia',
+        word: '話',
         translations: {
             english: 'story',
+            spanish: 'historia',
             french: 'histoire',
-            portuguese: 'história',
-            japanese: '物語'
+            portuguese: 'história'
         }
     },
     {
-        word: 'problema',
+        word: '問題',
         translations: {
             english: 'problem',
+            spanish: 'problema',
             french: 'problème',
-            portuguese: 'problema',
-            japanese: '問題'
+            portuguese: 'problema'
         }
     },
     {
-        word: 'solucion',
+        word: '解決',
         translations: {
             english: 'solution',
+            spanish: 'solución',
             french: 'solution',
-            portuguese: 'solução',
-            japanese: '解決'
+            portuguese: 'solução'
         }
     },
     {
-        word: 'idea',
+        word: 'アイデア',
         translations: {
             english: 'idea',
+            spanish: 'idea',
             french: 'idée',
-            portuguese: 'ideia',
-            japanese: 'アイデア'
+            portuguese: 'idéia'
         }
     },
     {
-        word: 'vida',
+        word: '生活',
         translations: {
             english: 'life',
+            spanish: 'vida',
             french: 'vie',
-            portuguese: 'vida',
-            japanese: '生活'
+            portuguese: 'vida'
         }
     },
     {
-        word: 'tiempo',
+        word: '時間',
         translations: {
             english: 'time',
+            spanish: 'tiempo',
             french: 'temps',
-            portuguese: 'tempo',
-            japanese: '時間'
+            portuguese: 'tempo'
         }
     },
     {
-        word: 'lugar',
+        word: '場所',
         translations: {
             english: 'place',
+            spanish: 'lugar',
             french: 'lieu',
-            portuguese: 'lugar',
-            japanese: '場所'
+            portuguese: 'lugar'
         }
     },
     {
-        word: 'cosa',
+        word: '物',
         translations: {
             english: 'thing',
+            spanish: 'cosa',
             french: 'chose',
-            portuguese: 'coisa',
-            japanese: '物'
+            portuguese: 'coisa'
         }
     },
     {
-        word: 'animal',
+        word: '動物',
         translations: {
             english: 'animal',
+            spanish: 'animal',
             french: 'animal',
-            portuguese: 'animal',
-            japanese: '動物'
+            portuguese: 'animal'
         }
     },
     {
-        word: 'planta',
+        word: '植物',
         translations: {
             english: 'plant',
+            spanish: 'planta',
             french: 'plante',
-            portuguese: 'planta',
-            japanese: '植物'
+            portuguese: 'planta'
         }
     },
     {
-        word: 'flor',
+        word: '花',
         translations: {
             english: 'flower',
+            spanish: 'flor',
             french: 'fleur',
-            portuguese: 'flor',
-            japanese: '花'
+            portuguese: 'flor'
         }
     },
     {
-        word: 'pez',
+        word: '魚',
         translations: {
             english: 'fish',
+            spanish: 'pez',
             french: 'poisson',
-            portuguese: 'peixe',
-            japanese: '魚'
+            portuguese: 'peixe'
         }
     },
     {
-        word: 'insecto',
+        word: '虫',
         translations: {
             english: 'insect',
+            spanish: 'insecto',
             french: 'insecte',
-            portuguese: 'inseto',
-            japanese: '昆虫'
+            portuguese: 'inseto'
         }
     },
     {
-        word: 'grande',
+        word: '大きい',
         translations: {
             english: 'big',
+            spanish: 'grande',
             french: 'grand',
-            portuguese: 'grande',
-            japanese: '大きい'
+            portuguese: 'grande'
         }
     },
     {
-        word: 'fresco',
+        word: '涼しい',
         translations: {
             english: 'cool',
+            spanish: 'fresco',
             french: 'frais',
-            portuguese: 'fresco',
-            japanese: '涼しい'
+            portuguese: 'fresco'
         }
     },
     {
-        word: 'rapido',
+        word: '速い',
         translations: {
             english: 'fast',
+            spanish: 'rápido',
             french: 'rapide',
-            portuguese: 'rápido',
-            japanese: '速い'
+            portuguese: 'rápido'
         }
     },
     {
-        word: 'lento',
+        word: '遅い',
         translations: {
             english: 'slow',
+            spanish: 'lento',
             french: 'lent',
-            portuguese: 'lento',
-            japanese: '遅い'
+            portuguese: 'devagar'
         }
     },
     {
-        word: 'hermoso',
+        word: '美しい',
         translations: {
             english: 'beautiful',
+            spanish: 'hermoso',
             french: 'beau',
-            portuguese: 'belo',
-            japanese: '美しい'
+            portuguese: 'bonito'
         }
     },
     {
-        word: 'bonito',
+        word: 'かわいい',
         translations: {
-            english: 'pretty',
+            english: 'cute',
+            spanish: 'bonito',
             french: 'joli',
-            portuguese: 'bonito',
-            japanese: '可愛い'
+            portuguese: 'bonito'
         }
     },
     {
-        word: 'feo',
+        word: '醜い',
         translations: {
             english: 'ugly',
+            spanish: 'feo',
             french: 'laid',
-            portuguese: 'feio',
-            japanese: '醜い'
+            portuguese: 'feio'
         }
     },
     {
-        word: 'simple',
+        word: '簡単',
         translations: {
             english: 'simple',
+            spanish: 'simple',
             french: 'simple',
-            portuguese: 'simples',
-            japanese: 'シンプル'
+            portuguese: 'simples'
         }
     },
     {
-        word: 'pesado',
+        word: '重い',
         translations: {
             english: 'heavy',
+            spanish: 'pesado',
             french: 'lourd',
-            portuguese: 'pesado',
-            japanese: '重い'
+            portuguese: 'pesado'
+        }
+    },
+    {
+        word: '軽い',
+        translations: {
+            english: 'light (weight)',
+            spanish: 'ligero',
+            french: 'léger',
+            portuguese: 'leve'
         }
     }
 ];

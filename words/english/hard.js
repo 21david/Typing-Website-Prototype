@@ -4,140 +4,180 @@ words.english.hard = [
         word: 'ameliorate',
         translations: {
             spanish: 'mejorar',
-            french: 'améliorer'
+            french: 'améliorer',
+            portuguese: 'melhorar',
+            japanese: '改善する'
         }
     },
     {
         word: 'cogent',
         translations: {
             spanish: 'convincente',
-            french: 'convaincant'
+            french: 'convaincant',
+            portuguese: 'cogente',
+            japanese: '説得力のある'
         }
     },
     {
         word: 'gregarious',
         translations: {
             spanish: 'gregario',
-            french: 'grégaire'
+            french: 'grégaire',
+            portuguese: 'gregário',
+            japanese: '社交的な'
         }
     },
     {
         word: 'obfuscate',
         translations: {
             spanish: 'obstaculizar',
-            french: 'obscurcir'
+            french: 'obscurcir',
+            portuguese: 'obfuscar',
+            japanese: '混乱させる'
         }
     },
     {
         word: 'pellucid',
         translations: {
             spanish: 'transparente',
-            french: 'translucide'
+            french: 'translucide',
+            portuguese: 'translúcido',
+            japanese: '透明な'
         }
     },
     {
         word: 'quintessential',
         translations: {
             spanish: 'quintessential',
-            french: 'quintessentiel'
+            french: 'quintessentiel',
+            portuguese: 'quintessencial',
+            japanese: '典型的な'
         }
     },
     {
         word: 'recalcitrant',
         translations: {
             spanish: 'recalcitrante',
-            french: 'récalcitrant'
+            french: 'récalcitrant',
+            portuguese: 'recalcitrante',
+            japanese: '反抗的な'
         }
     },
     {
         word: 'sycophant',
         translations: {
             spanish: 'adulador',
-            french: 'sycophante'
+            french: 'sycophante',
+            portuguese: 'bajulador',
+            japanese: 'おべっか使い'
         }
     },
     {
         word: 'ubiquitous',
         translations: {
             spanish: 'ubicuo',
-            french: 'ubiquitaire'
+            french: 'ubiquitaire',
+            portuguese: 'onipresente',
+            japanese: '遍在する'
         }
     },
     {
         word: 'vicissitude',
         translations: {
             spanish: 'vicisitud',
-            french: 'vicissitude'
+            french: 'vicissitude',
+            portuguese: 'vicissitude',
+            japanese: '浮き沈み'
         }
     },
     {
         word: 'cognizant',
         translations: {
             spanish: 'consciente',
-            french: 'conscient'
+            french: 'conscient',
+            portuguese: 'cognizante',
+            japanese: '認識している'
         }
     },
     {
         word: 'ephemeral',
         translations: {
             spanish: 'efímero',
-            french: 'éphémère'
+            french: 'éphémère',
+            portuguese: 'efêmero',
+            japanese: '短命の'
         }
     },
     {
         word: 'equanimity',
         translations: {
             spanish: 'ecuanimidad',
-            french: 'équanimité'
+            french: 'équanimité',
+            portuguese: 'equanimidade',
+            japanese: '平静'
         }
     },
     {
-        word: 'magnanimous',
+        word: 'Magnanimous',
         translations: {
             spanish: 'magnánimo',
-            french: 'magnanime'
+            french: 'magnanime',
+            portuguese: 'magnânimo',
+            japanese: '寛大な'
         }
     },
     {
         word: 'inexorable',
         translations: {
             spanish: 'inexorable',
-            french: 'inexorable'
+            french: 'inexorable',
+            portuguese: 'inexorável',
+            japanese: '冷酷な'
         }
     },
     {
-        word: 'mellifluous',
+        word: 'Mellifluous',
         translations: {
             spanish: 'melifluo',
-            french: 'melliflue'
+            french: 'melliflue',
+            portuguese: 'melífluo',
+            japanese: '甘美な'
         }
     },
     {
         word: 'perfunctory',
         translations: {
             spanish: 'superficial',
-            french: 'superficiel'
+            french: 'superficiel',
+            portuguese: 'perfunctório',
+            japanese: 'いい加減な'
         }
     },
     {
-        word: 'proclivity',
+        word: 'Proclivity',
         translations: {
             spanish: 'proclividad',
-            french: 'proclivité'
+            french: 'proclivité',
+            portuguese: 'proclividade',
+            japanese: '傾向'
         }
     },
     {
         word: 'recalcitrant',
         translations: {
             spanish: 'recalcitrante',
-            french: 'récalcitrant'
+            french: 'récalcitrant',
+            portuguese: 'recalcitrante',
+            japanese: '反抗的な'
         }
     },
     {
-        word: 'supercilious',
+        word: 'Supercilious',
         translations: {
             spanish: 'altanero',
-            french: 'hautain'
+            french: 'hautain',
+            portuguese: 'supercilioso',
+            japanese: '高慢な'
         }
     },
     {
@@ -145,62 +185,80 @@ words.english.hard = [
         translations: {
             spanish: 'hipopótamo',
             french: 'hippopotame',
+            portuguese: 'hipopótamo',
+            japanese: 'カバ'
         }
     },
     {
         word: 'flibbertigibbet',
         translations: {
             spanish: 'locuaz',
-            french: 'babillard'
+            french: 'babillard',
+            portuguese: 'tagarela',
+            japanese: 'おしゃべり'
         }
     },
     {
         word: 'gobbledygook',
         translations: {
             spanish: 'galimatías',
-            french: 'charabia'
+            french: 'charabia',
+            portuguese: 'burocratês',
+            japanese: '専門用語'
         }
     },
     {
         word: 'lollygag',
         translations: {
             spanish: 'holgazanear',
-            french: 'flâner'
+            french: 'flâner',
+            portuguese: 'vadiar',
+            japanese: 'ぶらぶらする'
         }
     },
     {
         word: 'discombobulate',
         translations: {
             spanish: 'desconcertar',
-            french: 'déconcerter'
+            french: 'déconcerter',
+            portuguese: 'descombobular',
+            japanese: '混乱させる'
         }
     },
     {
-        word: 'snollygoster',
+        word: 'Snollygoster',
         translations: {
             spanish: 'político astuto',
-            french: 'politicien rusé'
+            french: 'politicien rusé',
+            portuguese: 'político astuto',
+            japanese: '狡猾な政治家'
         }
     },
     {
         word: 'widdershins',
         translations: {
             spanish: 'contra reloj',
-            french: 'sens inverse'
+            french: 'sens inverse',
+            portuguese: 'sentido anti-horário',
+            japanese: '反時計回りに'
         }
     },
     {
-        word: 'collywobbles',
+        word: 'Collywobbles',
         translations: {
             spanish: 'retortijones',
-            french: 'coliques'
+            french: 'coliques',
+            portuguese: 'dor de barriga',
+            japanese: 'お腹の痛み'
         }
     },
     {
-        word: 'pandiculation',
+        word: 'Pandiculation',
         translations: {
             spanish: 'estiramiento, bostezo',
-            french: 'étirement, bâillement'
+            french: 'étirement, bâillement',
+            portuguese: 'esticamento, bocejo',
+            japanese: '伸びをする、あくびをする'
         }
     },
     {
@@ -208,36 +266,17 @@ words.english.hard = [
         translations: {
             spanish: 'NASA',
             french: 'NASA',
-        }
-    },
-    {
-        word: 'FBI',
-        translations: {
-            spanish: 'FBI',
-            french: 'FBI',
-        }
-    },
-    {
-        word: 'CIA',
-        translations: {
-            spanish: 'CIA',
-            french: 'CIA',
+            portuguese: 'NASA',
+            japanese: 'NASA'
         }
     },
     {
         word: 'UNICEF',
         translations: {
             spanish: 'UNICEF',
-            french: 'UNICEF'
-        }
-    },
-    {
-        word: 'USA',
-        translations: {
-            spanish: 'EE.UU.',
-            french: 'États-Unis',
+            french: 'UNICEF',
+            portuguese: 'UNICEF',
+            japanese: 'ユニセフ'
         }
     }
 ];
-
-// Object.freeze(english.hard);

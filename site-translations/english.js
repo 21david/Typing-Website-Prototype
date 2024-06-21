@@ -2,7 +2,7 @@ const translationData = {};
 translationData.english = {
     durationOptions: ['15 seconds', '30 seconds', '1 minute', '2 minutes', '5 minutes', '10 minutes'],
     difficultyOptions: ['Easy', 'Medium', 'Hard', 'Expert'],
-    languageOptions: ['English', 'Spanish', 'French'],
+    languageOptions: ['English', 'Spanish', 'French', 'Portuguese', 'Japanese'],
     restart: 'Restart',
     textboxPlaceholder: 'Type the words here',
     translateToggle: 'Translate?',

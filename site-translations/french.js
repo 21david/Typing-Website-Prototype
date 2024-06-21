@@ -1,7 +1,7 @@
 translationData.french = {
     durationOptions: ['15 secondes', '30 secondes', '1 minute', '2 minutes', '5 minutes', '10 minutes'],
     difficultyOptions: ['Facile', 'Moyen', 'Difficile', 'Expert'],
-    languageOptions: ['Anglais', 'Espagnol', 'Français'],
+    languageOptions: ['Anglais', 'Espagnol', 'Français', 'Portugais', 'Japonais'],
     restart: 'Redémarrer',
     textboxPlaceholder: 'Tapez les mots ici',
     translateToggle: 'Traduire?',

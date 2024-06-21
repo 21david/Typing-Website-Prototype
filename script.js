@@ -232,7 +232,7 @@ function finishedTest(testNum) {
         <h3>${currLanguageData.part1(WPM)} ${currLanguageData.part2(WPM)}</h3>
         <p><strong>${currLanguageData.correctWords} </strong> ${correctWords}</p>
         <p><strong>${currLanguageData.correctLetters} </strong> ${correctLetters}</p>
-        <p><strong>${currLanguageData.wrongWords} ${wrongWords}</p>
+        <p><strong>${currLanguageData.wrongWords} </strong> ${wrongWords}</p>
     `;
 
     if (wrongArr.length) {
@@ -285,6 +285,10 @@ let languages = {
     portuguese: {
         position: 4,
         nativeLanguageName: 'Português'
+    },
+    japanese: {
+        position: 5,
+        nativeLanguageName: '日本語'
     },
 };
 
