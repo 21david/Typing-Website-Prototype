@@ -1,5 +1,6 @@
 const NUM_WORDS = 1500;
-let currentWordSet = easy;
+let currentWordSet = words.english.easy;
+let currentDifficulty = 'easy';
 let translation = true;
 let translationLanguage = 'spanish';
 let language = 'english'
@@ -36,7 +37,7 @@ function setUp() {
 
     // Set up random words
     if (translation)
-        translationLanguage = document.getElementById('translation-language').value; // get current translation language
+        translationLanguage = document.getElementById('tooltip-language').value; // get current translation language
     for (let i = 0; i < NUM_WORDS; i++) {
         let randIdx = Math.floor(Math.random() * currentWordSet.length);
         actualTestWords.push(currentWordSet[randIdx].word);
@@ -226,36 +227,18 @@ function finishedTest(testNum) {
 
     let message;
 
-    switch (language) {
-        case 'english':
-            message = WPM ? 'Great job.' : 'You suck!';
-            resultsDiv.innerHTML = `
-            <h3>${message} You typed at <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> WPM!</h3>
-            <p><strong>Correct words: </strong> ${correctWords}</p>
-            <p><strong>Correct letters: </strong> ${correctLetters}</p>
-            <p><strong>Wrong words: </strong> ${wrongWords}</p>
-            `;
-            if (wrongArr.length) {
-                resultsDiv.innerHTML += `
-                    <p><strong>Wrong words: </strong> ${wrongArr}</p>
-                `;
-            }
-            break;
+    let currLanguageData = translationData[language];
+    resultsDiv.innerHTML = `
+        <h3>${currLanguageData.part1(WPM)} ${currLanguageData.part2(WPM)}</h3>
+        <p><strong>${currLanguageData.correctWords} </strong> ${correctWords}</p>
+        <p><strong>${currLanguageData.correctLetters} </strong> ${correctLetters}</p>
+        <p><strong>${currLanguageData.wrongWords} ${wrongWords}</p>
+    `;
 
-        case 'spanish':
-            message = WPM ? '¡Buen trabajo!' : 'Lastima.';
-            resultsDiv.innerHTML = `
-                <h3>${message} Escribiste a <strong style="color: green; font-size: 2.1em;"> ${WPM}</strong> palabras por minuto. </h3>
-                <p><strong>Palabras correctas: </strong> ${correctWords}</p>
-                <p><strong>Letras correctas: </strong> ${correctLetters}</p>
-                <p><strong>Palabras incorrectas: </strong> ${wrongWords}</p>
-            `;
-            if (wrongArr.length) {
-                resultsDiv.innerHTML += `
-                    <p><strong>Palabras incorrectas: </strong> ${wrongArr}</p>
-                `;
-            }
-            break;
+    if (wrongArr.length) {
+        resultsDiv.innerHTML += `
+            <p><strong>${currLanguageData.wrongWords} </strong> ${wrongArr}</p>
+        `;
     }
 }
 
@@ -273,30 +256,14 @@ function timer(timeLeft, testNum) {
         }, 1000);
 }
 
-function changeDifficulty(option) {
-    switch (option) {
-        case 'easy':
-            currentWordSet = easy;
-            break;
-
-        case 'medium':
-            currentWordSet = easy.concat(medium);
-            break;
-
-        case 'hard':
-            currentWordSet = medium.concat(hard);
-            break;
-
-        case 'expert':
-            currentWordSet = hard.concat(expert);
-            break;
-    }
-
+function changeDifficulty(newDifficulty) {
+    currentDifficulty = newDifficulty;
+    currentWordSet = words[language][newDifficulty];
     setUp();
 }
 
-function changeDuration(option) {
-    LENGTH_SECONDS = Number(option);
+function changeDuration(newDuration) {
+    LENGTH_SECONDS = Number(newDuration);
     setUp();
 }
 
@@ -321,99 +288,86 @@ let languages = {
     },
 };
 
-function changeLanguage(option) {
-    let newDurationOptions;
-    let currentDurationOptions;
-    let i;
-    let prevLanguageOption, translationLanguageSelectEle;
-
-    switch (option) {
-        case 'english':
-            language = 'english';
-            currentWordSet = easy;
-            document.getElementById('restart').innerText = 'Restart';
-            document.getElementById('textbox').setAttribute('placeholder', 'Type the words here');
-            document.getElementById('difficultyLi').style.display = "";
-            document.getElementById('translation-label').innerText = 'Translate?'
-
-            // Set duration dropdown options
-            newDurationOptions = ['15 seconds', '30 seconds', '1 minute', '2 minutes', '5 minutes', '10 minutes'];
-            currentDurationOptions = document.getElementById('duration').options;
-            i = 0;
-            for (let option of currentDurationOptions) {
-                option.text = newDurationOptions[i++];
-            }
-
-            // Add the previous language to the dropdown
-            translationLanguageSelectEle = document.getElementById('translation-language');
-            prevLanguageOption = document.createElement('option');
-            prevLanguageOption.setAttribute('value', prevLanguage);
-            prevLanguageOption.text = prevLanguage[0].toUpperCase() + prevLanguage.substring(1);
-            // if (prevLanguage != language)
-                prevLanguageOption.text += ` (${languages[prevLanguage].nativeLanguageName})`;
-            translationLanguageSelectEle.add(prevLanguageOption, languages[prevLanguage].position - 1);
-            prevLanguage = 'english';
-
-            // Remove english from translation dropdown
-            var englishOption = translationLanguageSelectEle.querySelector('option[value="english"]');
-            if (englishOption) {
-                translationLanguageSelectEle.removeChild(englishOption);
-            }
-
-            break;
-
-        case 'spanish':
-            language = 'spanish';
-            currentWordSet = easySpanish;
-            document.getElementById('restart').innerText = 'Reiniciar';
-            document.getElementById('textbox').setAttribute('placeholder', 'Escribe las palabras aqui');
-            document.getElementById('difficultyLi').style.display = "none";
-            document.getElementById('translation-label').innerText = '¿Traducir?'
-
-            // Set duration options
-            newDurationOptions = ['15 segundos', '30 segundos', '1 minuto', '2 minutos', '5 minutos', '10 minutos'];
-            currentDurationOptions = document.getElementById('duration').options;
-            i = 0;
-            for (let option of currentDurationOptions) {
-                option.text = newDurationOptions[i++];
-            }
-
-            // Add the previous language to the dropdown
-            translationLanguageSelectEle = document.getElementById('translation-language');
-            prevLanguageOption = document.createElement('option');
-            prevLanguageOption.setAttribute('value', prevLanguage);
-            prevLanguageOption.text = prevLanguage[0].toUpperCase() + prevLanguage.substring(1);
-            // if (prevLanguage != language)
-                prevLanguageOption.text += ` (${languages[prevLanguage].nativeLanguageName})`;
-            translationLanguageSelectEle.add(prevLanguageOption, languages[prevLanguage].position - 1);
-            prevLanguage = 'spanish';
-
-            // Remove spanish from translation dropdown
-            var spanishOption = translationLanguageSelectEle.querySelector('option[value="spanish"]');
-            if (spanishOption) {
-                translationLanguageSelectEle.removeChild(spanishOption);
-            }
-
-            break;
-    }
+function changeLanguage(newLanguage) {
+    language = newLanguage;
+    currentWordSet = words[language][currentDifficulty];
+    translatePage(language);
     setUp();
+}
+
+function translatePage(newLanguage) {
+    let data = translationData[newLanguage];
+
+    document.getElementById('restart').innerText = data.restart;
+    document.getElementById('textbox').setAttribute('placeholder', data.textboxPlaceholder);
+    document.getElementById('translation-label').innerText = data.translateToggle;
+
+    // Set difficulty dropdown options
+    let currentDifficultyOptions = document.getElementById('difficulty').options;
+    let i = 0;
+    for (let option of currentDifficultyOptions) {
+        option.text = data.difficultyOptions[i++];
+    }
+
+    // Set duration dropdown options
+    currentDurationOptions = document.getElementById('duration').options;
+    i = 0;
+    for (let option of currentDurationOptions) {
+        option.text = data.durationOptions[i++];
+    }
+
+    // Set language dropdown options
+    let currLanguagePosition = languages[newLanguage].position - 1;
+    let languageObjects = Object.values(languages);
+    currentLanguageOptions = document.getElementById('language').options;
+    i = 0;
+    for (let option of currentLanguageOptions) {
+        if (i === currLanguagePosition) {
+            option.text = `${data.languageOptions[i++]} `;
+            continue;
+        }
+        option.text = `${data.languageOptions[i]} (${languageObjects[i++].nativeLanguageName})`;
+    }
+
+    // Add the previous language to the tooltip language dropdown
+    translationLanguageSelectEle = document.getElementById('tooltip-language');
+    prevLanguageOption = document.createElement('option');
+    prevLanguageOption.setAttribute('value', prevLanguage);
+    let prevLanguagePosition = languages[prevLanguage].position - 1;
+    prevLanguageOption.text = data.languageOptions[prevLanguagePosition];
+    translationLanguageSelectEle.add(prevLanguageOption, prevLanguagePosition);
+
+    // Remove the new/current language from translation dropdown
+    var currentLanguageOption = translationLanguageSelectEle.querySelector(`option[value="${newLanguage}"]`);
+    translationLanguageSelectEle.removeChild(currentLanguageOption);
+    prevLanguage = newLanguage;
+
+    // Translate the rest of the dropdown options
+    let currentTooltipLanguageOptions = translationLanguageSelectEle.options;
+    i = 0;
+    for (let option of currentTooltipLanguageOptions) {
+        if (i === currLanguagePosition) // skip current language
+            i++;
+        option.text = `${data.languageOptions[i]} (${languageObjects[i++].nativeLanguageName})`;
+    }
+
 }
 
 function toggleTranslation() {
     translation = !translation;
 
     if (!translation) {
-        document.getElementById('translation-language-li').style.visibility = 'hidden';
+        document.getElementById('tooltip-language-li').style.visibility = 'hidden';
     }
     else {
-        document.getElementById('translation-language-li').style.visibility = 'visible';
+        document.getElementById('tooltip-language-li').style.visibility = 'visible';
     }
 
     setUp();
 }
 
-function changeTranslationLanguage(language) {
-    translationLanguage = language;
+function changeTranslationLanguage(newLanguage) {
+    translationLanguage = newLanguage;
 
     setUp();
 }

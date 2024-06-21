@@ -35,14 +35,15 @@
                 <select name="Language" id="language"  onchange="changeLanguage(this.value)"> 
                     <option value="english" selected>English</option> 
                     <option value="spanish">Spanish (Español)</option> 
+                    <option value="french">French (Français)</option> 
                 </select>
             </li>
             <li>
                 <label id="translation-label">Translate?</label>
                 <input type="checkbox" id="translation" checked onchange="toggleTranslation()"><br>
             </li>
-            <li id="translation-language-li">
-                <select name="Language" id="translation-language"  onchange="changeTranslationLanguage(this.value)"> 
+            <li id="tooltip-language-li">
+                <select name="Language" id="tooltip-language"  onchange="changeTranslationLanguage(this.value)"> 
                     <option value="spanish" selected>Spanish (Español)</option>
                     <option value="french">French (Français)</option>
                 </select>
@@ -65,12 +66,23 @@
     <script>
         let m = 60;
         let LENGTH_SECONDS =   m  ;
+        const words = {};
     </script>
-    <script src="words/easyWords.js"></script>
-    <script src="words/mediumWords.js"></script>
-    <script src="words/hardWords.js"></script>
-    <script src="words/expertWords.js"></script>
-    <script src="words/spanishEasyWords.js"></script>
+    <script src="words/english/easy.js"></script>
+    <script src="words/english/medium.js"></script>
+    <script src="words/english/hard.js"></script>
+    <script src="words/english/expert.js"></script>
+    <script src="words/spanish/easy.js"></script>
+    <script src="words/spanish/medium.js"></script>
+    <script src="words/spanish/hard.js"></script>
+    <script src="words/spanish/expert.js"></script>
+    <script src="words/french/easy.js"></script>
+    <script src="words/french/medium.js"></script>
+    <script src="words/french/hard.js"></script>
+    <script src="words/french/expert.js"></script>
+    <script src="site-translations/english.js"></script>
+    <script src="site-translations/spanish.js"></script>
+    <script src="site-translations/french.js"></script>
     <script src="script.js"></script>
     <script>setUp()</script>
 </body>
